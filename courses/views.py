@@ -96,8 +96,6 @@ def view_course(request, courseID):
     course_resource = Course_resource.objects.filter(course = course)
     return render(request, 'courses/view_course.html', {'data': course,'data1':course_resource,'resource' : course_resource[0].resourse_link, 'lectures' : len(course_resource)})
     
-    
-
 # Course pages
 def coreui(request):
     # if request.COOKIES.get('username') == None or request.COOKIES.get('username') == 'None':
