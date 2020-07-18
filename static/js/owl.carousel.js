@@ -1338,7 +1338,6 @@
 		}
 		return width;
 	};
-
 	/**
 	 * Replaces the current content.
 	 * @public

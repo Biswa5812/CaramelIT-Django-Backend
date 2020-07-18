@@ -1,5 +1,3 @@
-
-
 {% load static %}
 
 <!DOCTYPE html>
@@ -9,7 +7,8 @@
   <link rel="stylesheet" type="text/css" href="{% static 'staticHome/css/style.css' %}">
    <meta charset="utf-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" type="image/jpg" href="images/cr.jpg">
+  <!--<link rel="shortcut icon" type="image/jpg" href="images/cr.jpg">-->
+  <link rel="shortcut icon" href="../../static/staticHome/images/Caramellogo.jpg" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700%CPT+Serif:400,700,400italic' rel='stylesheet'>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -48,7 +47,7 @@
       <nav class="navbar navbar-expand-md navbar-light  naving1" >
       <div class="container-fluid">
       <a class="navbar-brand" href="../academy">
-        <img src="{% static 'staticHome/images/caramelacademy.png'%}" width="200px" height="70px">
+        <img src="{% static 'staticHome/images/caramelacademy.jpeg'%}" width="200px" height="70px" style="border-radius: 40px 0 0 40px;">
         </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
         <span class="navbar-toggler-icon"></span>
@@ -61,7 +60,7 @@
         <!-- <li class="nav-item dropdown dropdowns naving-item">
           <div class="dropdown">
             <button class="btn blue-col btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="color:white;"> 
-               <a class="blue-col" >
+            <a class="blue-col" >
               Categories
                 </a>
               </button>
@@ -136,7 +135,7 @@
 
 
               </li>
-                           <li   class="dropdown-submenu">
+              <li   class="dropdown-submenu">
                 <a class="test" tabindex="-1" href="../courses/uicourses.html">UI Courses<span class="caret"></span></a>
 
 
@@ -171,11 +170,11 @@
       <div class="row">
         <div class="col-lg-8 ccontent">
           <br>
-            <p>Software development is the process of designing, programming, documenting, testing, and bug fixing involved in creating and maintaining applications, frameworks and other software components. Therefore, software development may include research, new development, prototyping, modification, reuse, re-engineering, maintenance, or any other activities that will result in software products.  </p>
-              
+            <p>
+              Software development is the process of designing, programming, documenting, testing, and bug fixing involved in creating and maintaining applications, frameworks and other software components. Therefore, software development may include research, new development, prototyping, modification, reuse, re-engineering, maintenance, or any other activities that result in software products.            </p>
         </div>
         <div class="col-lg-4 cimage">
-            <img src="{% static 'staticHome/images/software.jpg'%}">
+            <img src="{% static 'staticHome/images/software.jpeg'%}">
         </div>
        </div>
      </div>
@@ -183,37 +182,52 @@
     <div class="swiper-container">
        <h1 id="h" style="font-weight: bold;letter-spacing: 2px;font-size: 40px;margin-top: 43px;margin-left: 17px;text-align: center; color: white;">Sub Programs:</h1>
     </div>
+    <br>
+    <br>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-12">
+        <div class="swiper-slide"></div>
+        <div class="col-sm-4 col-lg-12 ">
           <div id="inam" class="carousel slide" data-ride="carousel">
+            <div class="owl-carousel owl-theme">
             <div class="carousel-inner">
               <div class="carousel-item active">
                  <div class="container">
                    <div class="row">
-                     <div class="col-sm-12 col-lg-4">
-                        <div class="card h-100">  <!--style="width: 300px;margin: auto;"> -->
+                     
+                     <div class="col-lg-3 col-sm-12">
+                       <div class="card h-200">  <!--style="width: 300px;margin: auto;"> -->
                           <a href="courses/uicourses"><img src="{% static 'staticHome/images/core ui.jpeg'%}" class="card-img-top"></a>
                          <div class="card-body">
-                           <h4 class="card-title">Core UI</h4>
+                           <h4 class="card-title"><strong>Frontend</strong></h4>
                          </div>  
                        </div>
                      </div>
-                     <div class="col-sm-12 col-lg-4">
-                       <div class="card h-100">
-                        <a href="courses/backend"><img src="{% static 'staticHome/images/backend2.jpg'%}" class="card-img-top"></a>
+                     <div class="col-lg-3 col-sm-12">
+                       <div class="card h-200">
+                        <a href="courses/backend"><img src="{% static 'staticHome/images/backback.jpeg'%}" class="card-img-top"></a>
                          <div class="card-body">
-                          <h4 class="card-title">Backend</h4>
+                          <h4 class="card-title"><strong>Backend</strong></h4>
                         </div>  
                          
                        </div>
                        
                      </div>
-                     <div class="col-sm-12 col-lg-4">
-                       <div class="card h-100"> <!-- style="width: 300px;">-->
-                        <a href="courses/fullstack"><img src="{% static 'staticHome/images/fullstack1.jpg'%}" class="card-img-top"></a>
+                     <div class="col-lg-3 col-sm-12">
+                       <div class="card h-200"> <!-- style="width: 300px;">-->
+                        <a href="courses/fullstack"><img src="{% static 'staticHome/images/fullstacktesting.png'%}" class="card-img-top"></a>
                          <div class="card-body">
-                          <h4 class="card-title">Fullstack</h4>
+                          <h4 class="card-title"><strong>Fullstack</strong></h4>
+                        </div>  
+                         
+                       </div>
+                       
+                     </div>
+                     <div class="col-sm-12 col-lg-3">
+                      <div class="card h-200">
+                        <a href="courses/functionaltesting"><img src="{% static 'staticHome/images/functionaltesting.png'%}" class="card-img-top"></a>
+                         <div class="card-body">
+                          <h5 class="card-title"><strong><center>Functionality Testing</center></strong></h5>
                         </div>  
                          
                        </div>
@@ -229,125 +243,109 @@
               <div class="carousel-item">
                  <div class="container">
                    <div class="row">
-                     <div class="col-sm-12 col-lg-4">
-                      <div class="card h-100">
-                        <a href="courses/functionaltesting"><img src="{% static 'staticHome/images/functionaltesting.png'%}" class="card-img-top"></a>
-                         <div class="card-body">
-                          <h4 class="card-title">Functionality Testing</h4>
-                        </div>  
-                         
-                       </div>
-                       
-                     </div>
-                     <div class="col-sm-12 col-lg-4">
-                      <div class="card h-100">
+                    <div class="col-sm-12 col-lg-3">
+                      <div class="card h-200">
                         <a href="courses/mobility"><img src="{% static 'staticHome/images/mobility1.jpg'%}" class="card-img-top"></a>
                          <div class="card-body">
-                          <h4 class="card-title">Mobility</h4>
+                          <h4 class="card-title"><strong>Mobiltiy</strong></h4>
                         </div>  
                          
                        </div>
                        
                      </div>
-                     <div class="col-sm-12 col-lg-4">
-                      <div class="card h-100">
+                    <div class="col-sm-12 col-lg-3">
+                      <div class="card h-200">
                         <a href="courses/devops"><img src="{% static 'staticHome/images/devops1.jpg'%}" class="card-img-top"></a>
                          <div class="card-body">
-                          <h4 class="card-title">Devops</h4>
+                          <h4 class="card-title"><strong>DevOps</strong></h4>
                         </div>  
                          
                        </div>
                        
                      </div>
-                     
-                   </div>
-                   
-                 </div>    
+                     <div class="col-sm-12 col-lg-3">
+                      <div class="card h-200">
+                        <a href="courses/datascience"><img src="{% static 'staticHome/images/datascience1.jpg'%}" class="card-img-top"></a>
+                        <div class="card-body">
+                        <h5 class="card-title"><strong><center>Data Science & AI/ML</center></strong></h5>
+                      </div>  
+                        
+                      </div>
+                      
+                    </div>
+                    <div class="col-sm-12 col-lg-3">
+                      <div class="card h-200">
+                        <a href="courses/cloud"><img src="{% static 'staticHome/images/cloudcomputing1.jpg'%}" class="card-img-top"></a>
+                        <div class="card-body">
+                         <h5 class="card-title"><center><strong>Cloud Computing</strong></center></h5>
+                       </div>  
+                        
+                      </div>
+                      
+                    </div>
+                  </div>
+                
+                </div>    
               </div>
               <div class="carousel-item">
                 <div class="container">
                   <div class="row">
-                    <div class="col-sm-12 col-lg-4">
-                      <div class="card h-100">
-                        <a href="courses/datascience"><img src="{% static 'staticHome/images/datascience1.jpg'%}" class="card-img-top"></a>
-                        <div class="card-body">
-                         <h4 class="card-title">Data Science and AI/ML</h4>
-                       </div>  
-                        
-                      </div>
-                      
-                    </div>
-                    <div class="col-sm-12 col-lg-4">
-                      <div class="card h-100">
-                        <a href="courses/cloud"><img src="{% static 'staticHome/images/cloudcomputing1.jpg'%}" class="card-img-top"></a>
-                        <div class="card-body">
-                         <h4 class="card-title">Cloud Computing</h4>
-                       </div>  
-                        
-                      </div>
-                      
-                    </div>
-                    <div class="col-sm-12 col-lg-4">
-                      <div class="card h-100">
+                    
+                    <div class="col-sm-12 col-lg-3">
+                      <div class="card h-200">
                         <a href="courses/cyber"><img src="{% static 'staticHome/images/cyber.jpg'%}" class="card-img-top"></a>
                         <div class="card-body">
-                         <h4 class="card-title">Security</h4>
+                         <h4 class="card-title"><strong>Security</strong></h4>
                        </div>  
                         
                       </div>
                       
                     </div>
-                    
+                    <div class="col-sm-12 col-lg-3">
+                      <div class="card h-200">
+                        <a href="courses/digital"><img src="{% static 'staticHome/images/digi1.jpg'%}" class="card-img-top"></a>
+                        <div class="card-body">
+                         <h5 class="card-title"><center><strong>Digital Marketting</strong></center></h5>
+                       </div>  
+                        
+                      </div>
+                      
+                    </div>
+
+                    <div class="col-sm-12 col-lg-3">
+                      <div class="card h-200">
+                        <a href="courses/erp"><img src="{% static 'staticHome/images/erp2.jpg'%}" class="card-img-top"></a>
+                        <div class="card-body">
+                         <h4 class="card-title"><strong>ERP</strong></h4>
+                       </div>  
+                        
+                      </div>
+                      
+                    </div>
+
+                    <div class="col-sm-3 col-lg-3">
+                      <div class="card h-200">
+                        <a href="courses/it"><img src="{% static 'staticHome/images/IT2.jpg'%}" class="card-img-top"></a>
+                        <div class="card-body">
+                         <h4 class="card-title"><b>IT</b></h4>
+                       </div>  
+                        
+                      </div>
+                      
+                    </div>
                   </div>
                   
                 </div>    
              </div>
-             <div class="carousel-item">
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-12 col-lg-4">
-                    <div class="card h-100">
-                      <a href="courses/digital"><img src="{% static 'staticHome/images/digi1.jpg'%}" class="card-img-top"></a>
-                      <div class="card-body">
-                       <h4 class="card-title">Digital Marketting</h4>
-                     </div>  
-                      
-                    </div>
-                    
-                  </div>
-                  <div class="col-sm-12 col-lg-4">
-                    <div class="card h-100">
-                      <a href="courses/erp"><img src="{% static 'staticHome/images/erp2.jpg'%}" class="card-img-top"></a>
-                      <div class="card-body">
-                       <h4 class="card-title">ERP</h4>
-                     </div>  
-                      
-                    </div>
-                    
-                  </div>
-                  <div class="col-sm-12 col-lg-4">
-                    <div class="card h-100">
-                      <a href="courses/it"><img src="{% static 'staticHome/images/IT2.jpg'%}" class="card-img-top"></a>
-                      <div class="card-body">
-                       <h4 class="card-title">IT</h4>
-                     </div>  
-                      
-                    </div>
-                    
-                  </div>
-                  
-                </div>
-                
-              </div>    
-           </div>
+            
          <div class="carousel-item">
           <div class="container">
             <div class="row">
-              <div class="col-sm-12 col-lg-4">
-                <div class="card h-100">
+              <div class="col-sm-12 col-lg-3">
+                <div class="card h-200">
                   <a href="courses/itcertification"><img src="{% static 'staticHome/images/it.jpeg'%}" class="card-img-top"></a>
                   <div class="card-body">
-                   <h4 class="card-title">IT Certification</h4>
+                   <h4 class="card-title"><b>IT Certification</b></h4>
                  </div>  
                   
                 </div>
@@ -357,6 +355,7 @@
             
           </div>    
        </div>
+      </div>
               
             </div>
             <a href="#inam" class="carousel-control-prev" data-slide="prev">
@@ -519,7 +518,9 @@
 <!---footer section start--->
 
 <!---------------------FOOTER STARTS--------------------->
-<section class="footer-section bg-lightgrey" id="foot-sec">
+<br>
+<br>
+<section class="footer-section bg-lightgrey" id="foot-sec" style:"height:500px">
 	<div class="contai">
 		<div class="footer text-center">
 			<div>
@@ -538,7 +539,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<p class="mb-0" id="foter" style="font-size: 18px;">
-							Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved By Caramel IT Services Pvt. Ltd.
+						Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved By Caramel IT Services Pvt. Ltd.
 						</p>
 					</div>
 				</div>
