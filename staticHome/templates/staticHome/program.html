@@ -37,6 +37,20 @@
       .carousel-control-next-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%230' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
+
+.h-200{
+  border-radius: 20px;
+  border-color: #292C7D;
+  border-style: double;
+}
+.card-img-top{
+  border-radius: 20px 20px 0 0;
+}
+.swiper-container{
+  border-radius: 10px;
+  margin: 1em;
+  width: 92.8em;
+}
     </style>
 </head>
 <body>
@@ -168,13 +182,13 @@
      <!---section1-->
      <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-8 ccontent">
+        <div class="col-lg-7 ccontent">
           <br>
-            <p>
-              Software development is the process of designing, programming, documenting, testing, and bug fixing involved in creating and maintaining applications, frameworks and other software components. Therefore, software development may include research, new development, prototyping, modification, reuse, re-engineering, maintenance, or any other activities that result in software products.            </p>
+            <p style="text-align: left; margin-left: 28px;">
+              Software development is the process of designing, programming, documenting, testing, and bug fixing involved in creating and maintaining applications, frameworks and other software components. Therefore, software development may include research, new development, prototyping, modification, re-engineering, maintenance, or any other activities that result in software products.            </p>
         </div>
-        <div class="col-lg-4 cimage">
-            <img src="{% static 'staticHome/images/software.jpeg'%}">
+        <div class="col-lg-5 ccontent">
+            <img src="{% static 'staticHome/images/software.jpeg'%}" style="height: 95%; margin: 8px; border-radius: 16px;">
         </div>
        </div>
      </div>
@@ -520,7 +534,7 @@
 <!---------------------FOOTER STARTS--------------------->
 <br>
 <br>
-<section class="footer-section bg-lightgrey" id="foot-sec" style:"height:500px">
+<section class="footer-section bg-lightgrey" id="foot-sec" style="height: 10em;">
 	<div class="contai">
 		<div class="footer text-center">
 			<div>
@@ -538,7 +552,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12">
-						<p class="mb-0" id="foter" style="font-size: 18px;">
+						<p class="mb-0" id="foter" style="font-size: 18px; float: right;">
 						Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved By Caramel IT Services Pvt. Ltd.
 						</p>
 					</div>
