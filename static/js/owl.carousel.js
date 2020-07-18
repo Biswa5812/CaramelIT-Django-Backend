@@ -1338,7 +1338,33 @@
 		}
 		return width;
 	};
-
+	//setting the owl position
+    function setOwlDotsPosition() {
+		const $target = $(".owl-item.active .owl-slide-text");
+		doDotsCalculations($target);
+	}
+	function doDotsCalculations(el) {
+		const height = el.height();
+		const {top, left} = el.position();
+		const res = height + top + 20;
+	
+		$(".owl-carousel .owl-dots").css({
+		  top: `${res}px`,
+		  left: `${left}px`
+		});
+	 }
+	 $owlCarousel.on("resize.owl.carousel", () => {
+		setTimeout(() => {
+		setOwlDotsPosition();
+		}, 50);
+	  });
+	  $owlCarousel.on("changed.owl.carousel", e => { 
+		// other code here
+	   
+		const $currentOwlItem = $(".owl-item").eq(e.item.index);
+		const $target = $currentOwlItem.find(".owl-slide-text");
+		doDotsCalculations($target);
+	  });
 	/**
 	 * Replaces the current content.
 	 * @public

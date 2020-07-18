@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +27,7 @@
         <nav class="navbar navbar-expand-md navbar-light  naving1" >
         <div class="container-fluid">
         <a class="navbar-brand" href="../acadamy.html">
-          <img class="logo1 horizontal-logo" src="../../images/caramelacademy.png" width="200px" alt="forecastr logo">
+          <img class="logo1 horizontal-logo" src="{%static 'images/caramelacademy.png'%}" width="200px" alt="forecastr logo">
           </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
           <span class="navbar-toggler-icon"></span>
@@ -160,13 +161,14 @@
 
 				<div class="train-col">
 					<div class="train-mid student-enroll wow" data-aos="fade-right"> <strong style="height: 40px;">500+</strong> students Enrolled</div>
-					<div class="train-mid wow animated" data-aos="fade-right"><strong>4.4<img src="../../images/rating.png" alt="rating"/><em>(325)</em></strong>Ratings</div>
+					<div class="train-mid wow animated" data-aos="fade-right"><strong>4.4<img src="{%static 'images/rating.png'%}" alt="rating"/><em>(325)</em></strong>Ratings</div>
 				</div>
 				</div>
 
 			<div class="col-lg-6 col-md-12 col-sm-12 col-12" id="secondcol">
 				<div class="embed-responsive embed-responsive-16by9">
-  					<iframe class="embed-responsive-item " src="https://www.youtube.com/embed/L7x8wcWbrfk" allowfullscreen></iframe>
+					  <!-- <iframe class="embed-responsive-item " src="https://www.youtube.com/embed/L7x8wcWbrfk" allowfullscreen></iframe> -->
+					  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSktIJ_uNUy7zihr46kxioOV1k-E3BCjvuk2Jdi2uzZ6Q8DzlHPZXV0qHkX4q99fA/embed?start=false&loop=false&delayms=3000" frameborder="0" id="course-img" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 				</div>
 			</div> 
 		</div>
@@ -185,9 +187,9 @@
 
 		<div class="col-lg-6 col-md-12 col-sm-12 col-12">
 			<ul id="ulsecondcol">
-				<li type="none" data-aos="fade-left"><div class="paragraph_box"><span class="pr-4"><img src="images/Learn.png"></span> <span class="vertical-slider-paragraph-space" style="float: right; width: 85%;">Pure & transparent code is devoid of redundant components.</span></div></li>
-				<li type="none" data-aos="fade-left"><div class="paragraph_box"><span class="pr-4"><img src="images/Learn.png"></span> <span class="vertical-slider-paragraph-space" style="float: right; width: 85%;">This means also mobile devices, where the navigation is the same easy and intuitive as in desktop or laptop.</span></div></li>
-				<li type="none" data-aos="fade-left"><div class="paragraph_box"><span class="pr-4"><img src="images/Learn.png"></span> <span class="vertical-slider-paragraph-space" style="float: right; width: 85%;">CoreUI Layout API lets you customize your project for almost any device – be it Mobile, Web or WebApp.</span></div></li>
+				<li type="none" data-aos="fade-left"><div class="paragraph_box"><span class="pr-4"><img src="{%static 'images/Learn.png'%}"></span> <span class="vertical-slider-paragraph-space" style="float: right; width: 85%;">Pure & transparent code is devoid of redundant components.</span></div></li>
+				<li type="none" data-aos="fade-left"><div class="paragraph_box"><span class="pr-4"><img src="{%static 'images/Learn.png'%}"></span> <span class="vertical-slider-paragraph-space" style="float: right; width: 85%;">This means also mobile devices, where the navigation is the same easy and intuitive as in desktop or laptop.</span></div></li>
+				<li type="none" data-aos="fade-left"><div class="paragraph_box"><span class="pr-4"><img src="{%static 'images/Learn.png'%}"></span> <span class="vertical-slider-paragraph-space" style="float: right; width: 85%;">CoreUI Layout API lets you customize your project for almost any device – be it Mobile, Web or WebApp.</span></div></li>
 				
 				
 			</ul>
@@ -198,9 +200,9 @@
 	<div class="row" id="whatlearn">
 		<div class="col-lg-6 col-md-12 col-sm-12 col-12">
 			<ul id="ulsecondcol">
-				<li type="none" data-aos="fade-left"><div class="paragraph_box"><span class="pr-4"><img src="images/Learn.png"></span> <span class="vertical-slider-paragraph-space" style="float: right; width: 85%;">CoreUI is the fastest way to build a modern dashboard for any platforms, browser or device.</span></div> </li>
-				<li type="none" data-aos="fade-left"><div class="paragraph_box"><span class="pr-4"><img src="images/Learn.png"></span> <span class="vertical-slider-paragraph-space" style="float: right; width: 85%;">CoreUI - UI Admin Kit is not just another Admin Template.</span></div></li>
-				<li type="none" data-aos="fade-left"><div class="paragraph_box"><span class="pr-4"><img src="images/Learn.png"></span> <span class="vertical-slider-paragraph-space" style="float: right; width: 85%;">It goes way beyond hitherto admin templates thanks to transparent code and file structure.</span></div></li>
+				<li type="none" data-aos="fade-left"><div class="paragraph_box"><span class="pr-4"><img src="{%static 'images/Learn.png'%}"></span> <span class="vertical-slider-paragraph-space" style="float: right; width: 85%;">CoreUI is the fastest way to build a modern dashboard for any platforms, browser or device.</span></div> </li>
+				<li type="none" data-aos="fade-left"><div class="paragraph_box"><span class="pr-4"><img src="{%static 'images/Learn.png'%}"></span> <span class="vertical-slider-paragraph-space" style="float: right; width: 85%;">CoreUI - UI Admin Kit is not just another Admin Template.</span></div></li>
+				<li type="none" data-aos="fade-left"><div class="paragraph_box"><span class="pr-4"><img src="{%static 'images/Learn.png'%}"></span> <span class="vertical-slider-paragraph-space" style="float: right; width: 85%;">It goes way beyond hitherto admin templates thanks to transparent code and file structure.</span></div></li>
 			</ul>
 		</div>
 	
@@ -208,7 +210,7 @@
 	
 	<div class="col-lg-6 col-md-12 col-sm-12 col-12 learn">
 		
-		<img src="images/what.webp" width="60%" class="center" height="200px">
+		<img src="{%static 'images/what.webp'%}" width="60%" class="center" height="200px">
 	</div>
 
 </div>
@@ -371,7 +373,7 @@
 		</div>
 		<div class="col-lg-4 col-md-12 col-sm-12 col-12" style="margin-top: 70px; overflow: visible;">
 			<div class="card">
-			  <img src="../../images/core ui.jpeg" alt="Web Development" style="width:100%;height:240px; border:0px solid black;border-radius: 35px 35px 0px 0px;">
+			  <img src="{%static 'images/core ui.jpeg'%}" alt="Web Development" style="width:100%;height:240px; border:0px solid black;border-radius: 35px 35px 0px 0px;">
 			  
 			  <a href="../../nodecontactform/acadamycontact.html"> <p style="margin-bottom: 0px;"><button>Join Now</button></p></a>
 			  <div style="background-color: #ebf5fc;">
@@ -407,20 +409,20 @@
 
 		<div class="first1">
 			<div class="second1">
-			<a href="advancedui.html">	<img src="../../images/advancedui.jpg">
+			<a href="advancedui.html">	<img src="{%static 'images/advancedui.jpg'%}">
 			</div>
 			<div class="third1">
 				<p>Advanced UI</p></a>
 			</div>
 			<div class="four1 d-flex">
 				<div class="five1">
-					<img src="../../images/down.png">
+					<img src="{%static 'images/down.png'%}">
 					<div class="seven1">
 						<p>Curriculam</p>
 					</div>
 				</div>
 				<div class="six1">
-					<img src="../../images/enroll.png">
+					<img src="{%static 'images/enroll.png'%}">
 				<div class="eight1">
 					<p>Enroll Now</p> 
 				</div>
@@ -432,20 +434,20 @@
 
 		<div class="first1">
 			<div class="second1">
-			<a href="angularjs.html">	<img src="../../images/angular.png">
+			<a href="angularjs.html">	<img src="{%static 'images/angular.png'%}">
 			</div>
 			<div class="third1">
 				<p>Angular JS</p></a>
 			</div>
 			<div class="four1 d-flex">
 				<div class="five1">
-					<img src="../../images/down.png">
+					<img src="{%static 'images/down.png'%}">
 					<div class="seven1">
 						<p>Curriculam</p>
 					</div>
 				</div>
 				<div class="six1">
-					<img src="../../images/enroll.png">
+					<img src="{%static 'images/enroll.png'%}">
 				<div class="eight1">
 					<p>Enroll Now</p> 
 				</div>
@@ -457,20 +459,20 @@
 
 		<div class="first1">
 			<div class="second1">
-			<a href="reactjs.html">	<img src="../../images/react2.jpg">
+			<a href="reactjs.html">	<img src="{%static 'images/react2.jpg'%}">
 			</div>
 			<div class="third1">
 				<p>React JS</p></a>
 			</div>
 			<div class="four1 d-flex">
 				<div class="five1">
-					<img src="../../images/down.png">
+					<img src="{%static 'images/down.png'%}">
 					<div class="seven1">
 						<p>Curriculam</p>
 					</div>
 				</div>
 				<div class="six1">
-					<img src="../../images/enroll.png">
+					<img src="{%static 'images/enroll.png'%}">
 				<div class="eight1">
 					<p>Enroll Now</p> 
 				</div>
@@ -482,20 +484,20 @@
 
 		<div class="first1">
 			<div class="second1">
-			<a href="vuejs.html">	<img src="../../images/vue.jpg">
+			<a href="vuejs.html">	<img src="{%static 'images/vue.jpg'%}">
 			</div>
 			<div class="third1">
 				<p>Vue JS</p></a>
 			</div>
 			<div class="four1 d-flex">
 				<div class="five1">
-					<img src="../../images/down.png">
+					<img src="{%static 'images/down.png'%}">
 					<div class="seven1">
 						<p>Curriculam</p>
 					</div>
 				</div>
 				<div class="six1">
-					<img src="../../images/enroll.png">
+					<img src="{%static 'images/enroll.png'%}">
 				<div class="eight1">
 					<p>Enroll Now</p> 
 				</div>
@@ -507,20 +509,20 @@
 		
 		<div class="first1">
 			<div class="second1">
-			<a href="../../coursedetails.html">	<img src="../../images/all courses.jpg">
+			<a href="../../coursedetails.html">	<img src="{%static 'images/all courses.jpg'%}">
 			</div>
 			<div class="third1">
 				<p>All Courses</p></a>
 			</div>
 			<div class="four1 d-flex">
 				<div class="five1">
-					<img src="../../images/down.png">
+					<img src="{%static 'images/down.png'%}">
 					<div class="seven1">
 						<p>Curriculam</p>
 					</div>
 				</div>
 				<div class="six1">
-					<img src="../../images/enroll.png">
+					<img src="{%static 'images/enroll.png'%}">
 				<div class="eight1">
 					<p>Enroll Now</p> 
 				</div>

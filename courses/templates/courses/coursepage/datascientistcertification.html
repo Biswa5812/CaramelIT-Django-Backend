@@ -1,702 +1,620 @@
- <!DOCTYPE html>
+{% load static %}
+
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Data Scientist Certification</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" type="image/jpg" href="../../images/cr.jpg">
-	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/coreui.css">
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<title>Data Science Certification</title>
+	<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<style>
+	@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+	/*Navbar and bread crumbs*/  
+	#body-content {overflow: hidden;}
+
+	.topic-list {
+		box-shadow: beige;
+		border-color: rgb(21, 20, 114);
+		border-width: 2px;
+		border-style: double;
+		margin: 20px 0px 0px 0px;
+		border-radius: 6px;
+	}
+
+	.topic-list:hover{
+		box-shadow: 0 0 11px rgba(33,33,33,.2);
+		background-color: white;
+	}
+	.topic-list p{
+		color: rgb(21, 20, 114);
+	}
+	.video{
+		width: 80%;
+	}
+	.pg_btn{
+	color: #F4AF47;
+	}
+	@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+	}
+
+
+	/*video*/
+	.vid{
+	align-content: center;
+	position: absolute;
+	margin: 40px 20px 0px 100px; 
+	width: 85%;
+	height: 75%; 
+	}
+	/*checkbox*/
+	.ui_list{
+		margin: 20px 20px 20px 20px;
+	}
+	.main{
+		background-color: #002333;
+		display : flex;
+		margin-top : 5px;
+	}
+	.toprow{
+		margin-top : 10px;
+		margin-left: 100px;
+		width: 100%;
+		
+		
+		color: white;
+		font-size: 15px;
+		height : 500px;
+		overflow-y: scroll;
+	}
+	.lecture-list{
+		margin-left: 100px;
+		margin-top : 10px;
+		
+		width: 100%;
+		color: white;
+		font-size: 20px;
+	}
+	.duration{
+		margin-left:10px;
+		font-size: 1.2em;
+		font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+		padding-top : 5px;
+	}
+	.title{
+		display : inline-block;
+		margin-left: 10px;
+		margin-top: 5px;
+		width: 75%;
+	}
+	.lec-duration{
+		display: inline-block;
+		
+		
+	}
+	.lec-title:hover{
+		cursor: pointer;
+		border: 1px solid grey;
+		border-radius : 10px;
+
+	}
+	.lec-title{
+		height : 40px;
+		margin-top : 5px;
+		margin-bottom: 5px;
+	}
+
+	#course-img{
+		height : 500px;
+		width : 800px;
+		margin-top: 10px;
+		margin-bottom:10px;
+		
+		
+	}
+
+
+	/*skills*/
+	.skills{
+		width : 100%;
+		margin:20px;
+	}
+	.btn-skills{
+		display: block;
+		background-color: #CB8A29;
+		color: white;
+		border-radius: 30px;
+		align-content: center;
+		font-weight: normal;
+		font-size: 1.5em;
+		font-family: "Times New Roman", Times, serif;
+		text-align: center;
+		margin:0px 20px 10px 80px;
+	}
+	.btn-langs{
+		height:40px;
+		width : 85px;
+		background-color: #ECFCFD;
+		border-radius: 25px;
+		font-weight: normal;
+		font-size: 1.0em;
+		font-family: "Times New Roman", Times, serif;
+		color: #CB8A29;
+		padding-bottom:10px;
+		margin-bottom:10px;
+		margin-left: 15px;
+
+	}
+	.btn-langxl{
+		height:40px;
+		width : 120px;
+		background-color: #ECFCFD;
+		border-radius: 20px;
+		font-weight: normal;
+		font-size: 1.0em;
+		font-family: "Times New Roman", Times, serif;
+		color: #CB8A29;
+		padding-bottom:10px;
+		margin-bottom:10px;
+		margin-left: 10px;
+		margin-top:5px;
+
+	}
+	/*instructor*/
+	.instructor{
+		width : 75%;
+		border-style: solid;
+		border-color: #CB8A29;
+		margin:25px;
+	}
+	.message{
+		color: #CB8A29;
+		font-weight: normal;
+		font-size: 1.2em;
+		font-family: "Times New Roman", Times, serif;
+		margin-left: 5px;
+		
+	}
+	.messageArea{
+		background-color: #F3D8B9;
+		border-color:  #CB8A29;
+		width: 90%;
+		margin: 2px 0px 0px 5px;
+	}
+	.btnsend{
+		font-weight : bold;
+		background-color:  #CB8A29;
+		margin: 10px;
+	}
+	/*main*/
+
+	.super_container
+	{
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.rcorner {
+	border-radius: 25px;
+	border: 2px solid #D5921D;
+	padding: 10px;
+	margin-top:20px; 
+	}
+	.card{
+		border: none;
+		width: 80%;
+		margin-left: 60px; 
+	}
+	.card-body{
+		color: #5C59D5;
+	}
+	h5{
+		color: #5C59D5;
+	}
+	.syl_btn{
+		margin: 5px;
+	}
+
+	/*Slider*/
+	.swiper-container {
+	width: 100%;
+	height: 350px;
+	margin-top: 40px;
+	max-width: 98vw;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	transition: 0.5s;
+	}
+	.swiper-container .swiper-wrapper .swiper-slide:hover {
+	transform: scale(1.1);
+	}
+	.swiper-container .swiper-wrapper .swiper-slide:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #f3d8b9;
+	z-index: 1;
+	transition: 0.5s;
+	}
+	.swiper-container .swiper-wrapper .swiper-slide:hover:before {
+	transform: scaleY(1.12);
+	}
+	.swiper-container .swiper-wrapper .swiper-slide:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	transition: 0.5s;
+	background: rgba(255, 255, 255, 0.1);
+	z-index: 1;
+	}
+	.swiper-container .swiper-wrapper .swiper-slide:hover:after {
+	transform: scaleY(1);
+	}
+	.swiper-container .swiper-wrapper.swiper-slide:hover {
+	z-index: 1;
+	}
+	.swiper-container .swiper-wrapper .swiper-slide div {
+	text-align: center;
+	z-index: 2;
+	padding: 0;
+	margin: 0;
+	transition: 0.5s;
+	background-color: rgb(11, 49, 154);
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 30%;
+	color: white;
+	}
+	.swiper-container .swiper-wrapper .swiper-slide div h5 {
+	border-bottom: 1px solid rgb(0, 140, 255);
+	}
+	.swiper-slide a,
+	.swiper-slide a i {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	color: rgb(255, 255, 255);
+	height: 5px;
+	width: 5px;
+	z-index: 2;
+	}
+
+	.swiper-container h2 {
+	font-weight: 500;
+	position: relative;
+	top: 0px;
+	padding-bottom: 30px;
+	text-align: center;
+	color: gray;
+	}
+
+	.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #f4af47;
+
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	}
+	/*footer*/
+	.footer{
+	width: 100%;
+	background-color: #A6ACAF;
+	margin-top: 20px;
+	overflow: hidden;
+	}
+	.social{
+	margin-top: 20px;
+	}
+	.gap_u{
+	margin: 20px;
+	}
+	.gap_l{
+	margin-left: 35px; 
+	}
+	.cr
+	{
+	font-family: Times New Roman;
+	font-size: 75%;
+	font-weight:bold;
+	margin-top: 20px; 
+	}
+	#course_list:hover {
+		cursor: pointer;
+	}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
 </head>
 <body>
-<!-- ---------------------------------NavBAr Section Starts--------------------------- -->
-     <section class="top-header" id="tophead">
-        <div class="container-fluid" id="coursenav">
-        <nav class="navbar navbar-expand-md navbar-light  naving1" >
-        <div class="container-fluid">
-        <a class="navbar-brand" href="../acadamy.html">
-          <img class="logo1 horizontal-logo" src="../../images/caramelacademy.png" width="200px" alt="forecastr logo">
-          </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item naving-item">
-            <a class="nav-link px-lg-4 font-weight-bold alink" href="../../index.html">IT Services Home</a>
-          </li>
-          <li class="nav-item dropdown dropdowns naving-item">
-            <div class="dropdown">
-              <button class="btn blue-col btn-default dropdown-toggle" type="button" data-toggle="dropdown">  <a class="blue-col">
-                Categories
-                  </a>
-                </button>
-              <ul class="dropdown-menu  neededdrop">
+<div class="super_container">
 
-                <li class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="#">PROGRAMS   <span class="caret"></span></a>
-                  <ul id="dmenu1" class="dropdown-menu">
-                    <li class="second-drop"><a tabindex="-1" href="../../program.html">Software Development</a></li>
+             <!--Navbar Start-->
+        <nav class="navbar navbar-expand-lg navbar-dark" style ="background-color: #002333;">
+ 			<a class="navbar-brand" href="/academy">
+    			<img src="{% static 'images/Caramellogo.png' %}" width="150" height="40" alt="LOGO">
+  			</a>
+  			<!-- Collapse button -->
+  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
+  			<!-- Collapsible content -->
+			<div class="collapse navbar-collapse" id="basicExampleNav">
+			    <!-- Links -->
+			    <ul class="navbar-nav ml-auto">
+			     	<li class="nav-item active">
+			        	<a class="nav-link" href="/">IT Services Solution</a>
+			      	</li>
+				    <!-- Dropdown -->
+				    <li class="nav-item dropdown">
+				       <a class="nav-link dropdown-toggle active" id="course_list" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+				    <div class="dropdown-menu dropdown-primary" aria-labelledby="course_list">
+				        <a class="dropdown-item" href="#">UI Courses</a>
+				        <a class="dropdown-item" href="#">Backend</a>
+				        <a class="dropdown-item" href="#">IT</a>
+				    </div>
+				    </li>
+				    <li class="nav-item active">
+			        	<a class="nav-link" href="/contact/academycontact">Contact Us</a>
+				    </li>
+			    </ul>
+			</div>
+		</nav>
 
-                  </ul>
-                </li>
-
-                  <li   class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="../backend.html">Backend<span class="caret"></span></a>
-
-
-                </li>
-                <li   class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="../cloud.html">Cloud Computing<span class="caret"></span></a>
-
-
-                </li>
-                <li   class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="../cyber.html">Cyber Security<span class="caret"></span></a>
-
-
-                </li>
-                                  <li   class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="../datascience.html">Datascience & AI/ML<span class="caret"></span></a>
-
-
-                </li>
-                                  <li   class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="../devops.html">Devops<span class="caret"></span></a>
-
-
-                </li>
-                                  <li   class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="../digital.html">Digital Marketing<span class="caret"></span></a>
-
-
-                </li>
-                                  <li   class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="../erp.html">Erp<span class="caret"></span></a>
-
-
-                </li>
-                                  <li   class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="../fullstack.html">Fullstack<span class="caret"></span></a>
-
-
-                </li>
-                <li   class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="../functionaltesting.html">Functionaltesting<span class="caret"></span></a>
-
-
-                </li>
-                <li   class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="../it.html">IT<span class="caret"></span></a>
-
-
-                </li>
-                <li   class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="../itcertification.html">It certification<span class="caret"></span></a>
-
-
-                </li>
-                <li   class="dropdown-submenu">
-
-
-                  <a class="test" tabindex="-1" href="../mobility.html">Mobility<span class="caret"></span></a>
-
-
-                </li>
-                             <li   class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="../uicourses.html">UI Courses<span class="caret"></span></a>
-
-
-                </li>
-
-                <li   class="dropdown-submenu">
-                  <a class="test" tabindex="-1" href="">ALL COURSES <span class="caret"></span></a>
-                  <ul id="dmenu3" class="dropdown-menu">
-                    <li class="second-drop"><a tabindex="-1" href="../../coursedetails.html">Courses</a></li>
-
-
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-
-
-
-          </li>
-
-
-          <li class="nav-item naving-item">
-            <a class="nav-link alink px-lg-4 font-weight-bold" href="../../nodeindexcontactform/contactform.html">Contact Us</a>
-          </li>
-          </ul>
+	<!-- bread crumb -->
+            	<div class="row container-fluid">
+	            	<div class="row container">
+	                	<div class="col topic-list">
+	                        <p>Software Development
+	                        <i class="fa fa-arrow-right fa-2x float-right pg_btn"></i>
+	                        </p>	
+	                   	</div>
+	               		<div class="col topic-list">
+	               			<p>Data Science
+		                    <i class="fa fa-arrow-right fa-2x float-right pg_btn"></i>
+		                    </p>	
+	                   	</div>
+		                <div class="col topic-list">
+		                    <p>Data Science Certification<i class="fa fa-arrow-down fa-2x float-right pg_btn"></i></p>
+		                </div>
+		            </div>
+            	</div>
+		<!-- First Half -->
+        <div class="container-fluid main">
+            <div class="row container-fluid">
+                <div class="col-md-8">
+                    <div class="newDiv">
+						<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTrl_26oJnd_KteiWYIoQgr-JHPSWa0SAqDCHkrhJZpRzqwumNMRzjHnaLxkQZuWg/embed?start=false&loop=false&delayms=60000" frameborder="0" id="course-img" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+					</div>
+                </div>
+                
+                
+                <div class = "col-md-4">
+                    <div class = "lecturelist">
+                    
+                    <div class="toprow">
+                    <div class = "duration">
+                        {{ lectures }} Lectures
+                    </div>
+					
+					{% for resource in data1 %}
+                    <div class="lec-title" id="{{ resource.resourse_name }}">
+                        <div class = "title" > {{ resource.resourse_name }}</div>
+                        <div class= "lec-duration">{{ resource.resourse_length }}</div>
+					</div>
+					<script>
+						video = document.getElementById("course-img");
+						button = document.getElementById("{{ resource.resourse_name }}");
+						button.addEventListener("click", function (){
+							// Change this to the video source for the lecture
+							video.innerHTML = '<iframe src="{{ resource.resourse_link }}" frameborder="0" id="course-img" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'
+						});
+					</script>
+					{% endfor %}
+                         
+            
+        </div>    
+        </div>
+         </div>
         </div>
         </div>
-       </nav>
-       </div>
-      </section>
-
-
-<!-- NavBAr SEction Ends -->
-
- <div class="container-fluid" id="uicontfluid">
-	<div  id="uicontainer">
-		<div class="row justify-content-between">
-
-			<div class="col-lg-6 col-md-12 col-sm-12 col-12">
-				<h1 data-aos="fade-left" >Data Scientist Certification</h1>
-				<p data-aos="fade-left">Mathematics, Statistics, Python, Advanced Statistics in Python, Machine & Deep Learning</p>
-			
-			<div class="train-col" >
-			
-				<div class="train-mid student-enroll wow" data-aos="fade-right" ><strong style="height: 40px;">500+</strong> Students Enrolled</div>
-				<div class="train-mid wow animated" data-aos="fade-right"><strong>4.4 <img src="../../images/rating.png" alt="Rating" /> <em>(325)</em></strong> Ratings</div>
-				
-			  </div>
-			</div>
-			<div class="col-lg-6 col-md-12 col-sm-12 col-12" id="secondcol">
-				<div class="embed-responsive embed-responsive-16by9">
-  					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/KdgQvgE3ji4"  allowfullscreen"allowfullscreen ></iframe>
+        	<!-- Second Half -->
+			<div class="row container-fluid">
+			<!-- Syllabus -->
+				<div class="col-md-8">
+					<div id="accordion">
+						<div class="card">
+						    <div class="rcorner" id="headingOne">
+						    	<h5> What will you learn
+						        <i class="fa fa-arrow-down syl_btn float-right" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></i>
+						    	</h5>
+						    </div>
+						    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+						      <div class="card-body">
+						        Pure and Transparent code is devoid of redundant components.<br>
+						        This Means also mobile devices where the navigation is easy and intuitive in a desktop or laptop.<br>
+						        Core UI Layout API Lets you custiomize your project for almost any device - be it mobile webapp or web.<br>
+						        Core UI is the fastest way to build a modern dashboard for any platforms , browser or device<br>
+						        Core UI- Admin Kit is not just another admin template<br>
+						        It goes way beyond hitherto admin templates thanks to transparent code and file structure<br>
+						      </div>
+						    </div>
+						</div>
+						<div class="card">
+						    <div class="rcorner" id="headingTwo">
+						    	<h5> Practice Assignments
+						        <i class="fa fa-arrow-down syl_btn float-right" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></i>
+						    	</h5>
+						    </div>
+						    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+						      <div class="card-body">
+						      	Content2
+						      </div>
+						    </div>
+						</div>
+						<div class="card">
+						    <div class="rcorner" id="headingThree">
+						       <h5> Technical Scenarios
+						        <i class="fa fa-arrow-down syl_btn float-right" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"></i>
+						    	</h5>
+						    </div>
+						    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+						      <div class="card-body">
+						        Content 3
+						      </div>
+						    </div>
+						</div>
+						<div class="card">
+						    <div class="rcorner" id="headingFour">
+						       <h5> Mini Project
+						        <i class="fa fa-arrow-down syl_btn float-right" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"></i>
+						    	</h5>
+						    </div>
+						    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+						      <div class="card-body">
+						        Content 4
+						      </div>
+						    </div>
+						</div>
+						<div class="card">
+						    <div class="rcorner" id="headingFive">
+						       <h5> Discussion Forums & FAQs
+						        <i class="fa fa-arrow-down syl_btn float-right" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"></i>
+						    	</h5>
+						    </div>
+						    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+						      <div class="card-body">
+						        Content 5
+						      </div>
+						    </div>
+						</div>
+					</div>
 				</div>
-			</div> 
-		</div>
-	</div>
-</div> 
-
-<div style="background-color: rgba(55,71,79 ,1);">
-<div class="container-fluid" style="padding: 20px 20px 0px 20px ; overflow-x: hidden;">
-	<div class="row" id="whatlearn">
-
-		<div class="col-lg-6 col-md-12 col-sm-12 col-12 learn">
-			<h1 data-aos="fade-up" style="margin-top:60px;"><b>What You'll Learn</b></h1>
-			
-		</div>
-
-
-
-		<div class="col-lg-6 col-md-12 col-sm-12 col-12">
-			
-			<ul>
-				<li type="none" data-aos="fade-left"> <div class="paragraph_box "> <span class="pr-4"> <img  src="images/Learn.png" class="" alt="Learn"> </span> <span class="vertical-slider-paragraph-space" style= "float: right; width:85%;"> Understand the mathematics behind Machine Learning (an absolute must which other courses don’t teach!)</span></div></li>
-				<li type="none" data-aos="fade-left"> <div class="paragraph_box "> <span class="pr-4"> <img  src="images/Learn.png" class="" alt="Learn"> </span> <span class="vertical-slider-paragraph-space" style= "float: right; width:85%;">Be able to create Machine Learning algorithms in Python, using NumPy, statsmodels and scikit-learn</span></div></li>
-				<li type="none" data-aos="fade-left"> <div class="paragraph_box "> <span class="pr-4"> <img  src="images/Learn.png" class="" alt="Learn"> </span> <span class="vertical-slider-paragraph-space" style= "float: right; width:85%;"> Apply your skills to real-life business cases</span></div></li>
-						
-			</ul>
-		</div>
-
-
-	</div>
-
-	<div class="row" id="whatlearn">
-
-		<div class="col-lg-6 col-md-12 col-sm-12 col-12">
-			<ul id="ulsecondcol">
-				<li type="none" data-aos="fade-left"> <div class="paragraph_box "> <span class="pr-4"> <img  src="images/Learn.png" class="" alt="Learn"> </span> <span class="vertical-slider-paragraph-space" style= "float: right; width:85%;">Start coding in Python and learn how to use it for statistical analysis</span></div></li>
-				<li type="none" data-aos="fade-left"> <div class="paragraph_box "> <span class="pr-4"> <img  src="images/Learn.png" class="" alt="Learn"> </span> <span class="vertical-slider-paragraph-space" style= "float: right; width:85%;">Perform linear and logistic regressions in Python</span></div></li>
-				<li type="none" data-aos="fade-left"> <div class="paragraph_box "> <span class="pr-4"> <img  src="images/Learn.png" class="" alt="Learn"> </span> <span class="vertical-slider-paragraph-space" style= "float: right; width:85%;">Statistical analysis, Python programming with NumPy, pandas, matplotlib, and more.</span></div></li>
-			</ul>
-		</div>
-
-
-
-		<div class="col-lg-6 col-md-12 col-sm-12 col-12 learn">
-			
-	
-			
-		<img src="images/what.webp" width="60%" class="center" height="200px" >
-	
-		</div>
-	</div>
-	
-</div>
-</div>
-<div style="background:rgba(252,228,236 ,1);">
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 acc-section"  style="padding-bottom: 40px;">
-			<br>
-			<h2 style="color: #111;"><b>Course Content</b></h2>
-			<button class="collapsible" data-aos="fade-down">Introduction to Data Science Certification</button>
-			<div class="content">
-				 <ul class="unorder">
-					 
-				 	<li> Data Science Certificate. Derive predictive insights by applying advanced statistics, modeling, and programming skills. Acquire in-depth knowledge of machine learning and computational techniques.</li>
-				 	
-				 </ul>
+			<!-- Skills you learn and Instructor feedback -->
+				<div class="col-md-4">
+					<div class="skills">
+							<div class="row container-fluid">
+								<div class="btn btn-skills">Skills You Learn</div>
+							</div>
+							<div class="row container">
+			                    <button class="btn btn-langs">HTML</button>
+			                    <button class="btn btn-langs">CSS</button>
+			                    <button class="btn btn-langs">Javascript</button>
+			                    <button class="btn btn-langs">UI</button>
+			                    <button class="btn btn-langs">Bootstrap</button>
+			                    <button class="btn btn-langs">Icon</button>
+			                    <button class="btn btn-langs">Graphics</button>
+			                    <button class="btn btn-langs">App</button>
+			                    <button class="btn btn-langs">I-phone</button>
+			                    <button class="btn btn-langs">Android</button>
+			                    <button class="btn btn-langxl">Web Design</button>
+			                </div>
+		            </div>
+		            <div class="row container-fluid">
+		            	<div class="instructor">
+			                <form>
+			                	<div class="form-group">
+			                		<p class = "message">Did you not understand something ? <br>Ask Your Instructor !</p>
+			                	</div>
+			   	                <div class="form-group justify-content-center align-items-center">
+			                        <textarea name="message" id="message" class="form-control messageArea" placeholder="Enter Message"></textarea>
+			                    </div>
+			                    <button type="submit" class="btn btnsend float-right">Send</button>
+			                </form>
+            			</div>
+		            </div>
+				</div>
 			</div>
-			
-			
-			<button class="collapsible" data-aos="fade-down">Data science certification Course content</button>
-			<div class="content">
-			  <ul class="unorder">
-				  <li> Machine Learning </li>
-				  <li>K-Means Clustering </li>
-					<li>Decision Trees </li>
-					<li>Data Mining </li>
-					<li>Python Libraries </li> 
-					<li>	Statistics </li>
-					<li>	 Scala </li>
-					<li>	 Spark Streaming </li>
-					<li>	 RDDs </li>
-					<li>	 MLlib </li>
-					<li>	 Spark SQL </li>
-					<li>	 Random Forest </li>
-					<li>	 Naïve Bayes </li> 
-			        <li>	Time Series </li>
-				   <li>Text Mining </li>
-					<li> Web Scraping </li> 
-					<li>PySpark </li>
-					<li>	 Python Scripting </li>
-					<li>	 Neural Networks </li> 
-					<li>	Keras </li>
-					<li>	TFlearn </li>
-				   <li>	SoftMax </li>
-					<li>	 Autoencoder </li>
-					<li>	 Restricted Boltzmann Machine </li>
-					<li>	 LOD Expressions </li>
-					<li>	 Tableau Desktop </li>
-					<li>	Tableau Public </li>
-					<li>	 Data Visualization </li>
-					<li>	 Integration with R </li>
-					<li>	 Probability </li>
-					<li>	 Bayesian Inference </li>
-					<li>	 Regression Modelling etc </li>
-				
-				 
-			  </ul>
+			<!-- Slider -->
+				<div class="swiper-container">
+      						<h2>OTHER RELEVANT COURSES</h2>
+		      			<div class="swiper-wrapper">
+							  {% for sim in similar %}
+		                    	<div class="swiper-slide"><a href="#" class="fav" onclick="fav()"><i class="fas fa-heart"></i></a>
+			                      	<div>
+			                          <h5 class="container  py-4">{{ sim.course_name }}</h5>
+			                          <p>{{ sim.course_description }}</p>
+			                      	</div>
+								  </div>
+								{% endfor %}
+		                </div>
+               	</div>
+			<!-- Foooter -->
+			<div class="footer">
+				<div class="row gap_u">
+						<div class="row container-fluid justify-content-center align-items-center ">
+							<div class="text-center social">
+								<i class="fab fa-facebook-f fa-2x"></i>
+								<i class="fab fa-instagram fa-2x gap_l"></i>
+								<i class="fab fa-pinterest-square fa-2x gap_l"></i>
+								<i class="fab fa-twitter-square fa-2x gap_l"></i>
+								<i class="fab fa-linkedin-in fa-2x gap_l"></i>
+							</div>
+						</div>
+						<div class="row container-fluid justify-content-center align-items-center">
+							<div class="cr text-center"><h3>©2020 All Rights Reserverd By Caramel IT Services Pvt. Ltd.</h3></div>
+						</div>
+				</div>
 			</div>
-
-		</div>	
-		<div class="col-lg-4 col-md-12 col-sm-12 col-12" style="margin-top: 70px; overflow: visible;">
-			<div class="card">
-			  <img src="../../images/dsc.jpg"  alt="Web Development" style="width:100%;height:270px; border:0px solid black;border-radius: 35px 35px 0px 0px;">
-			  
-			  <a href="../../nodecontactform/acadamycontact.html"> <p style="margin-bottom: 0px;"><button>Join Now</button></p></a>
-			  <div style="background-color: #ebf5fc;">
-			  <h4 style="margin-bottom:15px;">&ensp;&nbsp;This Course includes</h4>
-			  
-			  <p>&emsp;<i class="fa fa-play-circle" style="font-size:1rem;"></i>&emsp;Tutorials</p>
-			  <p>&emsp;<i class="fa fa-file-text" style="font-size:1rem;"></i>&emsp;Articles, Videos</p>
-			  <p>&emsp;<i class="fa fa-pencil" style="font-size:1rem;"></i>&emsp;Full Time Lectures</p>
-			  <p>&emsp;<i class="fa fa-eye" style="font-size:1rem;"></i>&emsp;Real Scenarios</p>
-			  <p>&emsp;<i class="fa fa-road" style="font-size:1rem"></i>&emsp;Project Work</p>
-			  <p>&emsp;<i class="fa fa-clone" style="font-size:1rem;"></i>&emsp;Certification of Completion</p>
-			</div>
-			<a href="../../nodecontactform/acadamycontact.html" ><p><button id="en-rol">Enroll Now</button></p></a>
-				
-		</div>
-		</div>
-	</div>
-</div>
 </div>
 
 
 
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
-
-<!--------------------------related course start------------------------------------->
-
-<div class="container back">
-    <div class="rel-cour">
-   <h1>Related Courses</h1>
-	</div>
-	<div class="row">
-	<div class="owl-carousel owl-theme" id="slider">
-
-
-
-
-		<div class="first1">
-			<div class="second1">
-			<a href="mlwithpython.html">	<img src="../../images/ml python.png">
-			</div>
-			<div class="third1">
-				<p>ML with PYTHON</p></a>
-			</div>
-			<div class="four1 d-flex">
-				<div class="five1">
-					<img src="../../images/down.png">
-					<div class="seven1">
-						<p>Curriculam</p>
-					</div>
-				</div>
-				<div class="six1">
-					<img src="../../images/enroll.png">
-				<div class="eight1">
-					<p>Enroll Now</p> 
-				</div>
-				</div>
-			</div>
-		</div>
-
-
-
-		<div class="first1">
-			<div class="second1">
-			<a href="deeplearning.html">	<img src="../../images/deep learning.jpg">
-			</div>
-			<div class="third1">
-				<p>DEEP LEARNING</p></a>
-			</div>
-			<div class="four1 d-flex">
-				<div class="five1">
-					<img src="../../images/down.png">
-					<div class="seven1">
-						<p>Curriculam</p>
-					</div>
-				</div>
-				<div class="six1">
-					<img src="../../images/enroll.png">
-				<div class="eight1">
-					<p>Enroll Now</p> 
-				</div>
-				</div>
-			</div>
-		</div>
-
-
-
-		<div class="first1">
-			<div class="second1">
-			<a href="dataanalytics.html">	<img src="../../images/data analytics.jpg">
-			</div>
-			<div class="third1">
-				<p>Data Analytics</p></a>
-			</div>
-			<div class="four1 d-flex">
-				<div class="five1">
-					<img src="../../images/down.png">
-					<div class="seven1">
-						<p>Curriculam</p>
-					</div>
-				</div>
-				<div class="six1">
-					<img src="../../images/enroll.png">
-				<div class="eight1">
-					<p>Enroll Now</p> 
-				</div>
-				</div>
-			</div>
-		</div>
-
-
-
-		<div class="first1">
-			<div class="second1">
-			<a href="dsbootcamp.html">	<img src="../../images/bootcamp.png">
-			</div>
-			<div class="third1">
-				<p>BOOTCAMP</p></a>
-			</div>
-			<div class="four1 d-flex">
-				<div class="five1">
-					<img src="../../images/down.png">
-					<div class="seven1">
-						<p>Curriculam</p>
-					</div>
-				</div>
-				<div class="six1">
-					<img src="../../images/enroll.png">
-				<div class="eight1">
-					<p>Enroll Now</p> 
-				</div>
-				</div>
-			</div>
-		</div>
-		<div class="first1">
-			<div class="second1">
-			<a href="naturallanguageprocessing.html">	<img src="../../images/nlp.jpg">
-			</div>
-			<div class="third1">
-				<p>Natural Language Processing</p></a>
-			</div>
-			<div class="four1 d-flex">
-				<div class="five1">
-					<img src="../../images/down.png">
-					<div class="seven1">
-						<p>Curriculam</p>
-					</div>
-				</div>
-				<div class="six1">
-					<img src="../../images/enroll.png">
-				<div class="eight1">
-					<p>Enroll Now</p> 
-				</div>
-				</div>
-			</div>
-		</div>
-		<div class="first1">
-			<div class="second1">
-			<a href="rprogramming.html">	<img src="../../images/r pro.jpg">
-			</div>
-			<div class="third1">
-				<p>R Programming</p></a>
-			</div>
-			<div class="four1 d-flex">
-				<div class="five1">
-					<img src="../../images/down.png">
-					<div class="seven1">
-						<p>Curriculam</p>
-					</div>
-				</div>
-				<div class="six1">
-					<img src="../../images/enroll.png">
-				<div class="eight1">
-					<p>Enroll Now</p> 
-				</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="first1">
-			<div class="second1">
-			<a href="aimlfoundationcourse.html">	<img src="../../images/aimlfound.jpg">
-			</div>
-			<div class="third1">
-				<p>AI/ML Foundation Course</p></a>
-			</div>
-			<div class="four1 d-flex">
-				<div class="five1">
-					<img src="../../images/down.png">
-					<div class="seven1">
-						<p>Curriculam</p>
-					</div>
-				</div>
-				<div class="six1">
-					<img src="../../images/enroll.png">
-				<div class="eight1">
-					<p>Enroll Now</p> 
-				</div>
-				</div>
-			</div>
-		</div>
-		<div class="first1">
-			<div class="second1">
-			<a href="aimlexpertcourse.html">	<img src="../../images/aimlexpert.jpg">
-			</div>
-			<div class="third1">
-				<p>AI/ML Expert Course</p></a>
-			</div>
-			<div class="four1 d-flex">
-				<div class="five1">
-					<img src="../../images/down.png">
-					<div class="seven1">
-						<p>Curriculam</p>
-					</div>
-				</div>
-				<div class="six1">
-					<img src="../../images/enroll.png">
-				<div class="eight1">
-					<p>Enroll Now</p> 
-				</div>
-				</div>
-			</div>
-		</div>
-		<div class="first1">
-			<div class="second1">
-			<a href="hadoop.html">	<img src="../../images/hadoop1.jpg">
-			</div>
-			<div class="third1">
-				<p>Hadoop</p></a>
-			</div>
-			<div class="four1 d-flex">
-				<div class="five1">
-					<img src="../../images/down.png">
-					<div class="seven1">
-						<p>Curriculam</p>
-					</div>
-				</div>
-				<div class="six1">
-					<img src="../../images/enroll.png">
-				<div class="eight1">
-					<p>Enroll Now</p> 
-				</div>
-				</div>
-			</div>
-		</div>
-
-	
-		
-		<div class="first1">
-			<div class="second1">
-			<a href="../../coursedetails.html">	<img src="../../images/all courses.jpg">
-			</div>
-			<div class="third1">
-				<p>All Courses</p></a>
-			</div>
-			<div class="four1 d-flex">
-				<div class="five1">
-					<img src="../../images/down.png">
-					<div class="seven1">
-						<p>Curriculam</p>
-					</div>
-				</div>
-				<div class="six1">
-					<img src="../../images/enroll.png">
-				<div class="eight1">
-					<p>Enroll Now</p> 
-				</div>
-				</div>
-			</div>
-		</div>
-
-
-
-
-
-
-		
-	
-		
-
-
-
-</div>
-</div>
-
-</div>
-
-	
-
-
-
-<!---------------------------related course end-------------------------------------->
-<!----------------------------footer section------------------------------------>
-<section class="footer-section" id="foot-sec">
-	<div class="container-fluid ">
-		<div class="footer py-5 text-center">
-			<div class="container">
-				<div class="row mb-5">
-					<div class="col-12">
-						<p class="mb-0"  id="select-id">
-							<a href="https://www.facebook.com/caramelacademy/" class="p-2"><span class="fa fa-facebook-square" style="font-size:36px"></span></a>
-							<a href="https://twitter.com/caramelacademy" class="p-2"><span class="fa fa-twitter-square" style="font-size:36px"></span></a>
-							<a href="https://www.instagram.com/caramelitacademy/" class="p-2"><span class="fa fa-instagram" style="font-size:36px"></span></a>
-							<a href="https://www.linkedin.com/company/37846486/admin/" class="p-2"><span class="fa fa-linkedin-square" style="font-size:36px"></span></a>
-							<a href="https://in.pinterest.com/caramelacademy/" class="p-2"><span class="fa fa-pinterest-square" style="font-size:36px"></span></a>
-							<a href="https://api.whatsapp.com/send?phone=+8886660462&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="p-2"><span class="fa fa-whatsapp" style="font-size:36px"></span></a>
-						</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<p class="mb-0" id="copyr"style="font-size: 20px;">
-							Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved By Caramel IT Services Pvt. Ltd.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> 
- </div>
-</section>
-
-
-	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-	<script>
-		AOS.init({
-			duration:2000,
-		});
-	  </script>
-<!-- JQuery Code For NavBAr starts -->
+    <!-- Initialize Swiper -->
+    <script src="{% static 'staticHome/javascript/index.js' %}"></script>
 <script type="text/javascript">
-	$(window).scroll(function(){
- 	if($(document).scrollTop()>70){
-    $('nav').addClass('shrink');
-  }else{
-    $('nav').removeClass('shrink');
-  }
-});
-</script>
-<!-- JQuery Code ENds -->
-
-
-
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } 
-  });
-}
-</script>
-
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<!-- <script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({c: '9e27d344-d348-49c7-8ed5-570b59634971', f: true }); done = true; } }; })();</script> -->
-
-<script type="text/javascript">
-	const $dropdown = $(".dropdown");
-const $dropdownToggle = $(".dropdown-toggle");
-const $dropdownMenu = $(".dropdown-menu");
-const showClass = "show";
-
-$(window).on("load resize", function() {
-if (this.matchMedia("(min-width: 768px)").matches) {
-$dropdown.hover(
-  function() {
-	const $this = $(this);
-	$this.addClass(showClass);
-	$this.find($dropdownToggle).attr("aria-expanded", "true");
-	$this.find($dropdownMenu).addClass(showClass);
+	var swiper = new Swiper(".swiper-container", {
+  slidesPerView: 5,
+  spaceBetween: 40,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
   },
-  function() {
-	const $this = $(this);
-	$this.removeClass(showClass);
-	$this.find($dropdownToggle).attr("aria-expanded", "false");
-	$this.find($dropdownMenu).removeClass(showClass);
-  }
-);
-} else {
-$dropdown.off("mouseenter mouseleave");
-}
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });
+
 </script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="js/owl.carousel.js"></script>
-
-	<script type="text/javascript">
-		$('#slider').owlCarousel({
-			loop: true,
-			margin: 10,
-			nav: true,
-			autoplay:true,
-			responsive: {
-			  0: {
-				items: 1
-			  },
-			  600: {
-				items: 3
-			  },
-			  1000: {
-				items: 4
-			  }
-			}
-		  });
-		
-		
-		
-		</script>
-
 </body>
 </html>

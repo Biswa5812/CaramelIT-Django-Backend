@@ -174,7 +174,7 @@
 	<div class="row ">
 		
 		<div id="no-space" class="col-md-12 col-lg-12 col-12">
-	<div class="middleblock" style=" background-image: url({%static 'staticHome/images/bgmid.jpg' %});">
+	<div class="middleblock" style=" background-image: url('/static/staticHome/images/bgmid.jpg');">
 		<br>
 		<center>
 		<div class="sel sel--black-panther" onclick="vis();">
@@ -375,8 +375,7 @@ $('.sel__box__options').click(function() {
 			<section>
 
 				<div id="myBtnContainer"> <br>
-				<a href="">	<button class="btn " onmouseover="filterSelection('front')"
-					>Front-End</button></a>
+				<a href="courses/uicourses"><button class="btn " onmouseover="filterSelection('front')">Front-End</button></a>
 					<a href="courses/backend"><button class="btn " onmouseover="filterSelection('backf')">Back-End</button></a>
 					<a href="courses/fullstack"><button class="btn " onmouseover="filterSelection('full')">Full Stack</button></a>
 					<a href="courses/functionaltesting">		<button class="btn " onmouseover="filterSelection('fun')"> Functional Testing</button></a>
@@ -403,7 +402,7 @@ $('.sel__box__options').click(function() {
 					<div class="column front text-center"  >
 					  <div class="content" >
 						<img src="{% static 'staticHome/images/core ui.jpeg'%}"  alt="Mountains" style="width:100%">
-				<a href="courses/coursepage/coreui"
+				<a href="../courses/coursepage/coreui"
 				 style="color:black; text-decoration:none;">
 				 		<p class="c-title">Core UI</p></a>
 						

@@ -93,16 +93,22 @@ def delete_course(request, courseID):
 
 def view_course(request, courseID):
     course = Course.objects.filter(course_id=courseID)[0]
-    return render(request, 'courses/view_course.html', {'data': course})
+    course_resource = Course_resource.objects.filter(course = course)
+    return render(request, 'courses/view_course.html', {'data': course,'data1':course_resource,'resource' : course_resource[0].resourse_link, 'lectures' : len(course_resource)})
+    
+    
 
 # Course pages
 def coreui(request):
-    if request.COOKIES.get('username') == None or request.COOKIES.get('username') == 'None':
-        return redirect('/user/login')
-    course = Course.objects.filter(course_id=26)
-    course_resource = Course_resource.objects.filter(course=course[0])
-    similar = Course.objects.filter(category_name=course[0].category_name)
-    return render(request, 'courses/coursepages/coreui.html', {'course' : course[0], 'course_resource' : course_resource, 'resource' : course_resource[0].resourse_link, 'lectures' : len(course_resource)})
+    # if request.COOKIES.get('username') == None or request.COOKIES.get('username') == 'None':
+    #     return redirect('/user/login')
+    # course = Course.objects.filter(course_id=26)
+    # course_resource = Course_resource.objects.filter(course=course[0])
+    # similar = Course.objects.filter(category_name=course[0].category_name)
+    return render(request, 'courses/coursepage/coreui1.html') #, {'course' : course[0], 'course_resource' : course_resource, 'resource' : course_resource[0].resourse_link, 'lectures' : len(course_resource)})
+
+def frontend(request):
+    return render(request,'courses/uicourses.html')
 
 def backend(request):
     return render(request, 'courses/backend.html')

@@ -73,7 +73,7 @@ urlpatterns = [
     path('admin/course_resource', courseviews.course_resource, name="course_resource"),
     path('admin/delete/<int:courseID>', courseviews.delete_course, name="delete_course"),
     path('admin/edit/<int:courseID>', courseviews.edit_course, name="edit_course"),
-    path('admin/view/<int:courseID', courseviews.view_course, name="view_course"),
+    path('admin/view/<int:courseID>', courseviews.view_course, name="view_course"),
     # Industries related pages
     path('industries/automotive', staticviews.automotive, name="automotive"),
     path('industries/communication', staticviews.communication, name="communication"),
@@ -96,6 +96,7 @@ urlpatterns = [
     path('business/operations', staticviews.operations, name="operations"),
     path('business/Application', staticviews.Application, name="Application"),
     # Courses
+    path('courses/uicourses',courseviews.frontend, name='frontend'),
     path('courses/backend', courseviews.backend, name="backend"),
     path('courses/fullstack', courseviews.fullstack, name="fullstack"),
     path('courses/functionaltesting', courseviews.functionaltesting, name="functionaltesting"),
@@ -131,7 +132,7 @@ urlpatterns = [
     path('courses/coursepage/ceh', courseviews.ceh, name="ceh"),
     path('courses/coursepage/chef', courseviews.chef, name="chef"),
     path('courses/coursepage/cisa', courseviews.cisa, name="cisa"),
-    path('courses/coursepage/cism', courseviews.cism, name="cissp"),
+    path('courses/coursepage/cism', courseviews.cism, name="cism"),
     path('courses/coursepage/cloudtesting', courseviews.cloudtesting, name="cloudtesting"),
     path('courses/coursepage/comptiasecurity', courseviews.comptiasecurity , name="comptiasecurity"),
     path('courses/coursepage/contentmarketing', courseviews.contentmarketing, name="contentmarketing"),

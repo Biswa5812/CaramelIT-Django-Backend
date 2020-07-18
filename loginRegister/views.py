@@ -14,7 +14,7 @@ def index(request):
 def user_login(request):
     try:
         if len(request.COOKIES.get('username')) > 0 and (request.COOKIES.get('type') == 'student' or request.COOKIES.get('type') == 'professional'):
-            return redirect('/ugser/successLoin')
+            return redirect('/user/successLogin')
     except Exception as e:
         pass
     if request.method == 'POST':
