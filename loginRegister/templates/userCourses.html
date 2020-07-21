@@ -1,0 +1,211 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+  <title>Shop The Skills</title>
+
+  <!-- load CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">    <!-- Google web font "Open Sans" -->
+  <link rel="stylesheet" href="{%static 'loginRegister/css/bootstrap.min.css' %}">                                        <!-- https://getbootstrap.com/ -->
+  <link rel="stylesheet" href="{%static 'loginRegister/css/templatemo-style.css' %}">                                     <!-- Templatemo style -->
+
+  <script>
+    var renderPage = true;
+
+    if(navigator.userAgent.indexOf('MSIE')!==-1
+      || navigator.appVersion.indexOf('Trident/') > 0){
+        /* Microsoft Internet Explorer detected in. */
+        alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+        renderPage = false;
+    }
+  </script>
+
+</head>
+
+<body>
+  <section>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            
+            <img src="{%static 'images/logo.jpg' %} " alt="" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">IT Services <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Contact Us <span class="sr-only">(current)</span></a>
+              </li>
+         
+          </ul>
+        </div>
+      </nav>
+ </section>
+  <!-- Loader -->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+ <div class="container">
+
+  <!-- 1st section -->
+  <section class="row tm-section">
+   <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0">
+    <div class="tm-flex-center p-5 tm-bg-color-primary tm-section-min-h">
+      <h1 class="tm-text-color-white tm-site-name">COURSES AND PROGRAMS</h1>
+     
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+  </div>
+</section>
+
+<!-- 2nd section -->
+<section class="row tm-section tm-col-md-reverse">
+ <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+  <div class="tm-flex-center p-5">
+    <div class="tm-md-flex-center">
+      <h2 class="tm-text-color-primary mb-4"><a href="#">DATA SCIENCE</h2></a>
+      <p class="mb-4">Data science is an inter-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from many structural and unstructured data. Data science is related to data mining, deep learning and big data.</p>
+      <a href="#" class="btn btn-primary float-lg-right tm-md-align-center">Save for later</a>
+      <a href="#" class="btn btn-primary float-lg-left tm-md-align-center">Add To Cart</a>
+    </div>
+  </div>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0">
+  <div class="tm-flex-center p-5 tm-bg-color-primary">
+    <div class="tm-max-w-400 tm-flex-center tm-flex-col"><a href=""></a>
+      <h2 class="tm-text-color-white mb-4"><a href="#">I.T.</h2></a>
+      <p class="tm-text-color-white mb-4">Information Technology (IT) is the use of computers and software to manage information. It's the career discipline responsible for storing, protecting, processing , transmitting the data as necessary, and later retrieving it as needed.</p>
+      <a href="#" class="btn btn-primary float-lg-right tm-md-align-center">Save for later</a>
+      <a href="#" class="btn btn-primary float-lg-left tm-md-align-center">Add To Cart</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 3rd Section -->
+<section class="row tm-section tm-mb-30">
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0 text-center">
+    <h2 class="tm-text-color-primary mb-4"><a href="#">Cyber Security</h2></a>
+    <p class="mb-4">Cyber security is the application of technologies, processes and controls to protect systems, networks, programs, devices and data from cyber attacks. It aims to reduce the risk of cyber attacks, and protect against the unauthorised exploitation of systems, networks and technologies.</p>
+      <a href="#" class="btn btn-primary float-lg-right tm-md-align-center">Save for later</a>
+      <a href="#" class="btn btn-primary float-lg-left tm-md-align-center">Add To Cart</a>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0">
+    <div class="tm-flex-center p-5 tm-bg-color-primary">
+      <div class="tm-max-w-400 tm-flex-center tm-flex-col">
+        <h2 class="tm-text-color-white mb-4"><a href="#">Digital Marketing</h2>
+        <p class="tm-text-color-white mb-4">Digital marketing is the promotion of products or brands via one or more forms of electronic media. Digital marketing is often referred to as online marketing, internet marketing or web marketing.</p>
+        <a href="#" class="btn btn-primary float-lg-right tm-md-align-center">Save for later</a>
+        <a href="#" class="btn btn-primary float-lg-left tm-md-align-center">Add To Cart</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4th Section -->
+<section class="row tm-section tm-mb-30">
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0 text-center">
+    <h2 class="tm-text-color-primary mb-4"><a href="#">Cloud Computing</h2></a>
+    <p class="mb-4">Cloud Computing refers to manipulating, configuring, and accessing the hardware and software resources remotely. It offers online data storage, infrastructure, and application. Cloud computing offers platform independency, as the software is not required to be installed locally on the PC.
+
+    </p>
+      <a href="#" class="btn btn-primary float-lg-right tm-md-align-center">Save for later</a>
+      <a href="#" class="btn btn-primary float-lg-left tm-md-align-center">Add To Cart</a>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0">
+    <div class="tm-flex-center p-5 tm-bg-color-primary">
+      <div class="tm-max-w-400 tm-flex-center tm-flex-col">
+        <h2 class="tm-text-color-white mb-4"><a href="#">AngularJS</h2></a>
+        <p class="tm-text-color-white mb-4">AngularJS is a structural framework for dynamic web applications. AngularJS changes static HTML to dynamic HTML.</p>
+        <a href="#" class="btn btn-primary float-lg-right tm-md-align-center">Save for later</a>
+        <a href="#" class="btn btn-primary float-lg-left tm-md-align-center">Add To Cart</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5th Section -->
+<section class="row tm-section tm-mb-30">
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0 text-center">
+    <h2 class="tm-text-color-primary mb-4"><a href="#">Front End</h2></a>
+    <p class="mb-4">Core UI is the fastest way to build a modern dashboard for any platforms, browser or device.    </p>
+      <a href="#" class="btn btn-primary float-lg-right tm-md-align-center">Save for later</a>
+      <a href="#" class="btn btn-primary float-lg-left tm-md-align-center">Add To Cart</a>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0">
+    <div class="tm-flex-center p-5 tm-bg-color-primary">
+      <div class="tm-max-w-400 tm-flex-center tm-flex-col">
+        <h2 class="tm-text-color-white mb-4"><a href="#">BACK END</h2></a>
+        <p class="tm-text-color-white mb-4">Backend development (also stylized as back-end or back end development) is the skill that powers the web.Backend development languages handle the 'behind-the-scenes' functionality of web applications. It's code that connects the web to a database, manages user connections, and powers the web application itself.</p>
+        <a href="#" class="btn btn-primary float-lg-right tm-md-align-center">Save for later</a>
+        <a href="#" class="btn btn-primary float-lg-left tm-md-align-center">Add To Cart</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6th Section -->
+<section class="row tm-section tm-mb-30">
+ <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+  <div class="tm-flex-center pl-5 pr-5 pt-5 pb-5">
+    <div class="tm-md-flex-center">
+     <h2 class="mb-4 tm-text-color-primary">WHY LEARN MORE SKILLS?</h2>
+     <p>Computer literacy is considered a very important skill to possess. Employers want their workers to have basic computer skills because their company becomes ever more dependent on computers. ... This leads to success in education and employment since computer skills are integral to all areas of study and work.A programing language enables us to write client programs and develop online solutions such as - mobile applications, web applications, and games, etc. Programming is used to automate, maintain, assemble, measure and interpret the processing of the data and information.</p>
+     <p class="mb-4">Transforming a student to an IT Professional Transformation:</p>
+     <p class="mb-4">Academics,skill analysis, 
+      Evaluate skills performance, 
+      Counseling for best course, 
+      Training recommendations, 
+      Course enrollment.</p>
+     <a href="#" class="btn btn-primary float-lg-right tm-md-align-center">Read More</a>
+   </div>
+ </div>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 text-xl-right text-md-center text-center mt-5 mt-lg-0 pr-lg-0">
+ <img src="{%static 'images/cool.png' %}" alt="Image" class="img-fluid">
+</div>
+</section>
+
+
+
+
+
+<!-- Footer -->
+<div class="row">
+  <div class="col-lg-12">
+    
+  </div>
+</div>
+</div>
+<!-- load JS -->
+<script src="{%static 'loginRegister/javascript/jquery-3.2.1.slim.min.js' %}"></script>         <!-- https://jquery.com/ -->
+<script>
+
+  /* DOM is ready
+  ------------------------------------------------*/
+  $(function(){
+
+    if(renderPage) {
+      $('body').addClass('loaded');
+    }
+
+    
+  });
+
+</script>
+
+</body>
+</html>
