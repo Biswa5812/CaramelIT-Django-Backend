@@ -547,6 +547,7 @@ def admin_register(request):
             admin1.save()
             return render(request, 'admin_register.html', {'state': 2})
         except Exception as e:
+            print(e)
             return render(request, 'admin_register.html', {'state': 4})
     return render(request, 'admin_register.html')
 
