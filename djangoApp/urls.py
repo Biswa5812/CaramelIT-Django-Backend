@@ -41,18 +41,23 @@ urlpatterns = [
     path('user/forgot-password', loginviews.forgot_password, name='user_forgot_password'),
     path('user/successLogin', loginviews.user_successLogin, name='user_successLogin'),
     path('user/logout', loginviews.logout, name='user_logout'),
+    path('user/account', loginviews.user_account, name='account'),
+    path('user/cart',loginviews.user_cart,name='cart'),
+    path('user/courses',loginviews.user_courses,name='courses'),
     # Instructor oriented pages
     path('instructor/instructor_login', loginviews.instructor_login, name='instructor_login'),
     path('instructor/instructor_register', loginviews.instructor_register, name='instructor_register'),
     path('instructor/instructor_forgot-password', loginviews.forgot_password, name='instructor_forgot_password'),
     path('instructor/instructor_successLogin', loginviews.instructor_successLogin, name='instructor_successLogin'),
     path('instructor/logout', loginviews.instructor_logout, name='instructor_logout'),
+    path('instructor/account', loginviews.instructor_account, name='account'),
     # Entity oriented pages
     path('entity/entity_login', loginviews.entity_login, name='entity_login'),
     path('entity/entity_register', loginviews.entity_register, name='entity_register'),
     path('entity/entity_forgot-password', loginviews.forgot_password, name='entity_forgot_password'),
     path('entity/entity_successLogin', loginviews.entity_successLogin, name='entity_successLogin'),
     path('entity/logout', loginviews.entity_logout, name='entity_logout'),
+    path('entity/account', loginviews.e_account, name='account'),
     # Admin oriented pages
     path('admin/admin_login', loginviews.admin_login, name='admin_login'),
     path('admin/admin_register', loginviews.admin_register, name='admin_register'),
