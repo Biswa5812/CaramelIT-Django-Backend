@@ -67,6 +67,9 @@ def user_register(request):
                 password=str(hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, 100000)),
             )
             student.save()
+            encoded_jwt = jwt.encode({'email': email, 'type': typeUser, 'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=15)}, 'caramelitdjangosecretkeytoken', 'HS256')
+            msg = "Welcome To Caramel IT Academy,\nYour account has been successfully created with following credentials.\nPASSWORD: "+str(password) + "\nEMAIL ID: " + str(email)
+            send_mail("Welcome New User", msg, 'Madarauchiha3524@gmail.com', [email], fail_silently=False,)
             return render(request, 'register.html', {'state': 2})
         except Exception as e:
             return render(request, 'register.html', {'state': 4})
@@ -161,9 +164,50 @@ def user_successLogin(request):
     student = User.objects.filter(email=username).values()
     data = student[0]
     if usertype == 'student':
-        return render(request, 'successLogin.html', {'data': data})
+        return render(request, 'successLogin.html', {'data': data,'ut':usertype})
     elif usertype == 'professional':
-        return render(request, 'successLoginProfessional.html', {'data': data})
+        return render(request, 'successLoginProfessional.html', {'data': data,'ut':usertype})
+
+def user_account(request):
+    username = request.COOKIES.get('username')
+    usertype = request.COOKIES.get('type')
+    if len(username) == 0:
+        response = redirect('/user/login')
+        response.set_cookie('username', None)
+        response.set_cookie('type', None)
+        return response
+    if request.method == 'POST':
+        student = User.objects.filter(email=username).values()
+        student.update(
+            first_name=request.POST.get('fname'),
+            last_name=request.POST.get('lname'),
+            phone=request.POST.get('phone'),
+            email=request.POST.get('email'),
+            state=request.POST.get('state'),
+            college=request.POST.get('college'),
+            highest_qualification=request.POST.get('highestQualification'),
+            university_name=request.POST.get('universityName'),
+            roll_no=request.POST.get('rollNo'),
+            specialisation=request.POST.get('specialisation'),
+            college_state=request.POST.get('collegeState'),
+            skill_set=request.POST.get('skills'),
+        )
+        return redirect('/user/account')
+    student = User.objects.filter(email=username).values()
+    data = student[0]
+    if usertype == 'student':
+        return render(request, 'account_user.html', {'data': data,'ut':usertype})
+    elif usertype == 'professional':
+        return render(request, 'account_prof.html', {'data': data,'ut':usertype})
+
+def user_cart(request):
+    # return redirect('/user/cart')
+    return render(request,'checkoutform.html')
+
+def user_courses(request):
+    return render(request,'userCourses.html')
+    
+    
 
 def logout(request):
     response = redirect('/user/login')
@@ -227,6 +271,9 @@ def instructor_register(request):
                 password=str(hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, 100000)),
             )
             instructor1.save()
+            encoded_jwt = jwt.encode({'email': email, 'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=15)}, 'caramelitdjangosecretkeytoken', 'HS256')
+            msg = "Welcome To Caramel IT Academy,\nYour account has been successfully created with following credentials.\nPASSWORD: "+str(password) + "\nEMAIL ID: " + str(email)
+            send_mail("Welcome Aboard" + str(fname), msg, 'Madarauchiha3524@gmail.com', [email], fail_silently=False,)
             return render(request, 'instructor_register.html', {'state': 2})
         except Exception as e:
             return render(request, 'instructor_register.html', {'state': 4})
@@ -262,6 +309,37 @@ def instructor_successLogin(request):
     instructor1 = instructor.objects.filter(email=username).values()
     data = instructor1[0]
     return render(request, 'instructor_successLogin.html', {'data': data})
+
+def instructor_account(request):
+    username = request.COOKIES.get('username')
+    usertype = request.COOKIES.get('type')
+    if len(username) == 0 or usertype != 'instructor':
+        response = redirect('/instructor/instructor_login')
+        response.set_cookie('username', None)
+        response.set_cookie('type', None)
+        return response
+    if request.method == 'POST':
+        instructor1 = instructor.objects.filter(email=username).values()
+        instructor1.update(
+            first_name=request.POST.get('fname'),
+            last_name=request.POST.get('lname'),
+            phone=request.POST.get('phone'),
+            email=request.POST.get('email'),
+            subjects=request.POST.get('subjects'),
+            experience=request.POST.get('experience'),
+            job_type=request.POST.get('role'),
+            state=request.POST.get('state'),
+            description=request.POST.get('description'),
+            job_organisation_name=request.POST.get('jobOrganisation'),
+            job_experience=request.POST.get('jobExperience'),
+            job_location=request.POST.get('jobLocation'),
+            job_state=request.POST.get('jobState'),
+            skills=request.POST.get('skills'),
+        )
+        return redirect('/instructor/account')
+    instructor1 = instructor.objects.filter(email=username).values()
+    data = instructor1[0]
+    return render(request, 'account_ins.html', {'data': data})
 
 def instructor_logout(request):
     response = redirect('/instructor/instructor_login')
@@ -348,6 +426,9 @@ def entity_register(request):
                     password=str(hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt, 100000)),
                 )
                 entity1.save()
+            encoded_jwt = jwt.encode({'email': email, 'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=15)}, 'caramelitdjangosecretkeytoken', 'HS256')
+            msg = "Welcome To Caramel IT Academy,\nThank you for choosing us. \nYour account has been successfully created with following credentials.\nPASSWORD: "+str(password) + "\nEMAIL ID: " + str(email)
+            send_mail("Welcome Aboard", msg, 'Madarauchiha3524@gmail.com', [email], fail_silently=False,)
             return render(request, 'entity_register.html', {'state': 2})
         except Exception as e:
             return render(request, 'entity_register.html', {'state': 4})
@@ -380,8 +461,40 @@ def entity_successLogin(request):
     print(data)
     if usertype == 'College':
         return render(request, 'college_successLogin.html', {'data' : data})
+        # return render(request,'account.html',{'data':data})
     elif usertype == 'Organization':
         return render(request, 'organisation_successLogin.html', {'data': data})
+
+def e_account(request):
+    username = request.COOKIES.get('username')
+    usertype = request.COOKIES.get('type')
+    if len(username) == 0:
+        response = redirect('/entity/entity_login')
+        response.set_cookie('username', None)
+        response.set_cookie('type', None)
+        return response
+    if request.method == 'POST':
+        entity1 = entity.objects.filter(email=username).values()
+        entity1.update(
+            college_name=request.POST.get('collegeName'),
+            university_name=request.POST.get('universityName'),
+            university_type=request.POST.get('universityType'),
+            email=request.POST.get('email'),
+            phone=request.POST.get('phone'),
+            country=request.POST.get('country'),
+            state=request.POST.get('state'),
+            skill_set=request.POST.get('skills'),
+            description=request.POST.get('description'),
+        )
+        return redirect('/entity/account')
+    entity1 = entity.objects.filter(email=username).values()
+    data = entity1[0]
+    print(data)
+    if usertype == 'College':
+        return render(request, 'account.html', {'data' : data})
+    elif usertype == 'Organization':
+        return render(request, 'account.html', {'data': data})
+
 
 def entity_logout(request):
     response = redirect('/entity/entity_login')
