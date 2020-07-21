@@ -23,12 +23,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	
 		 <style>
-		
-		
-			
-			
-			
-			</style>
+		.express-btn{border-radius: 10px 10px 10px 10px;}
+		.sel sel--black-panther{text-align: left;}
+		.middlebox{text-align: right;}
+		</style>
 </head>
 <body class="body-overflow" style="font-family: 'Times New Roman', Times, serif;">
 	<div class="acaheader" id="topheader">
@@ -86,18 +84,18 @@
 				<div class="row banner3" id="homeid1">
 					<div class="col-md-6 col-lg-6 col-12">
 					<div data-aos="flip-left"data-aos-duration="2000"data-aos-easing="ease-out-cubic">
-					<h1 > DRIVE YOUR TRANSFORMATION WITH US </h1>
-						<p> Be the first person to transform yourself with our unique & world class corporate level trainings & industry specific real time scenario based hands-on assignments </p>
+					<h1 style="color: black;"> DRIVE YOUR TRANSFORMATION WITH US </h1>
+						<p style="text-align: left; margin-left: 28px;color:rgb(0, 0, 0)"> Be the first person to transform yourself with our unique & world class corporate level trainings & industry specific real time scenario based hands-on assignments </p>
 						<div class="learn3">
 						<a href="#learnmore" class="express-btn">LEARN MORE</a>
-						<a href="{% static 'broouchure.pdf' %}" download class="banner2 ml-lg-5">DOWNLOAD</a>
+						<a href="{% static 'broouchure.pdf' %}" download class="banner2 ml-lg-5" style = "border-radius: 10px 10px 10px 10px;">DOWNLOAD</a>
 						</div>
 						</div>
 					</div>
 					
 					 <div class="col-md-6 col-lg-6 col-12 text-center1">
 						<!-- <div data-aos="fade-left"data-aos-duration="2000"> -->
- 							<img src="{% static 'staticHome/images/show4.png'%}" width="100%" height="60%" >
+ 							<img src="{% static 'staticHome/images/show4.png'%}" width="90%" height="60%" >
 						</div>
  				</div>
 			</div>
@@ -123,9 +121,6 @@
 	<p class="para-side">SHOW MORE</p>
 	<button class="collapse-btn" data-toggle="collapse" data-target="#demo" style="margin-right:50px;">
 		<img src="{% static 'staticHome/images/drop-down-arrow.png'%}" alt="" srcset="">
-		
-	
-	
 	</button>    
 	
 	
@@ -141,7 +136,7 @@
 
 			<div class="col-md-12 col-lg-12 col-12 ">
 
-	 <a href="https://caramelit.com/"><img id="demo" class="collapse" src="{% static 'staticHome/images/caramelitservices.png'%}"></a>
+	 <a href="https://caramelit.com/"><img id="demo" class="collapse" src="../../static/staticHome/images/caramelitservices.png"></a>
 
 
 			</div>
@@ -166,20 +161,20 @@
 	
 </div>
 	<div class="col-lg-8 col-md-6 col-12">
-	
 	<h2 class="font-weight-bold tophead1" style="color: rgba(124,77,255 ,1)">LET US KNOW MORE ABOUT YOU</h2>
 	</div>
 	</div>
-	<div class="container-fluid">
+	<div class="outer-conatiner">
 	<div class="row ">
-		
 		<div id="no-space" class="col-md-12 col-lg-12 col-12">
 	<div class="middleblock" style=" background-image: url('/static/staticHome/images/bgmid.jpg');">
 		<br>
-		<center>
+		<div class="container-fluid">
+			<!--<div class="row">-->
+		<!--<div class ="col-lg-7 col-sm-12 col-md-12">-->
 		<div class="sel sel--black-panther" onclick="vis();">
 			<select name="select-profession" id="select-profession" onclick="vis();">
-			  <option value="" >Select your Option</option>
+			  <option value="" >Select your Option </option>
 			
 			  <option value="hacker" onclick="vis();">Student (with no IT Knowledge)</option>
 			  <option value="gamer" onclick="vis();">Student (with some IT Knowledge)</option>
@@ -187,9 +182,9 @@
 			  <option value="programmer" onclick="vis();">Professional (with IT Experience)</option>
 			</select>
 		  </div>
+		<!--</div>-->
 		  <hr class="rule">
-		</center>
-		 
+		<!--<div class="col-lg-5 col-sm-12 col-md-12">-->
 		  <div id="middlebox">
 			<a href="https://caramelit.com/">
 		  <div class="counselling">
@@ -213,11 +208,16 @@
 		  </div>
 		  </div>
 		</div>
-		<div class="enrollment">
+	<!--</div>-->
+<!--</div>-->
+</div>
+		<div class="enrollment" style ="border-radius: 20px; border-width: 5px; border-color:blue;">
 			<a href="#"><h1>ENROLLMENT</h1></a>
 		</div>
 	</div>
-	</div></div></div>
+	</div>
+	</div>
+	</div>
 	<script>
 		
 		function vis(){
@@ -343,14 +343,11 @@ $('.sel__box__options').click(function() {
 				color: white;">Drive Your Transformation With Us</h1>
 				<p  style="text-align: center; margin-left: 16px;font-weight: bold;
 				padding-top: 10px;color: white; font-size:1.5em;">Collaboration Platform For 
-				All Your Technical Training Needs<br>
-				<span style="color:#07ef07;">Join Us Today</span>
-			</p>
-
-
-
-		
-
+				All Your Technical Training Needs</p>
+				<center>
+				<button type="button" class="btn btn-success btn-lg active" data-toggle="button" aria-pressed="true" autocomplete="off"><a href="user/login" style="color:aliceblue">Join Us Today</a></button>
+		        <br>
+                </center>
 
 		<button type="button" class="btn program" 
 		data-toggle="collapse" data-target="#demo" 
