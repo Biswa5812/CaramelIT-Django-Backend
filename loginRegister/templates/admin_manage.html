@@ -17,6 +17,14 @@
       body {
         overflow: scroll;
       }
+      .con {
+        background-image: url("../static/images/admin.jpg");
+        background-size: contain;
+        background-repeat:no-repeat;
+        max-height:100%;
+        max-width: 100%;
+      }
+
     </style>
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -35,12 +43,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <!-- <li class="nav-item active">
                   <a class="nav-link" href="#">IT Services <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Contact Us <span class="sr-only">(current)</span></a>
-                  </li>
+                  </li> -->
+                  <a class="navbar-brand" href="#">
+                
+                    <img src="{%static 'images/Djano.png' %} " alt="" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
              
               </ul>
             </div>
@@ -79,13 +94,19 @@
                 <li>
                     <a href="#">Tools</a>
                 </li>
+                <li>
+                    <a href="/">IT Service Home</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+              </li>
             </ul>
 
         
         </nav>
 
         <!-- Page Content  -->
-        <div id="content">
+        <div id="content" class="con">
 
 
     <div class="container">      
