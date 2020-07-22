@@ -26,6 +26,13 @@
 		.express-btn{border-radius: 10px 10px 10px 10px;}
 		.sel sel--black-panther{text-align: left;}
 		.middlebox{text-align: right;}
+		.sub-program-button{
+			border: 10px;
+			margin: 10px;
+		}
+		.c-size{
+			border-top: 10px;
+		}
 		</style>
 </head>
 <body class="body-overflow" style="font-family: 'Times New Roman', Times, serif;">
@@ -324,8 +331,6 @@ $('.sel__box__options').click(function() {
 		</div>
 	</div>
 </section>
-
-
 <!-------------------WORKING END-------------------------->
 <!-------------------PROGRAMS START-------------------------->
 <section class="program-section " id="ourprogram">
@@ -345,25 +350,25 @@ $('.sel__box__options').click(function() {
 				padding-top: 10px;color: white; font-size:1.5em;">Collaboration Platform For 
 				All Your Technical Training Needs</p>
 				<center>
-				<button type="button" class="btn btn-success btn-lg active" data-toggle="button" aria-pressed="true" autocomplete="off"><a href="user/login" style="color:aliceblue">Join Us Today</a></button>
+				<button type="button" class="btn btn-success btn-lg active" aria-pressed="true"><a href="user/login" style = "color:aliceblue;">Join Us Today</a></button>
 		        <br>
                 </center>
 
-		<button type="button" class="btn program" 
+		<button type="button" class="btn btn-lg active" aria-pressed="true"
 		data-toggle="collapse" data-target="#demo" 
-		style="background-color: white;color:black; height:40px;"  onClick="countClick()">
-		<h6 style="font-weight:600;margin-bottom:250px;   "   >
+		style="background-color:rgb(255, 41, 130);height:50px;color:rgb(245, 245, 245);"onClick="countClick()">
+		<h3  style="font-weight:600;margin-bottom:250px;"  >
 
 			Software Development  
 			 
 			<span class="js-arrow-down">
 				
 			</span>
-		</h6>
+		</h3>
 	
 	</button>
 		
-	
+	<br>
 			
 			   
 		
@@ -372,26 +377,33 @@ $('.sel__box__options').click(function() {
 			<section>
 
 				<div id="myBtnContainer"> <br>
-				<a href="courses/uicourses"><button class="btn " onmouseover="filterSelection('front')">FrontEnd</button></a>
-					<a href="courses/backend"><button class="btn " onmouseover="filterSelection('backf')">BackEnd</button></a>
-					<a href="courses/fullstack"><button class="btn " onmouseover="filterSelection('full')">Full Stack</button></a>
-					<a href="courses/functionaltesting">		<button class="btn " onmouseover="filterSelection('fun')"> Functional Testing</button></a>
-					<a href="courses/datascience">	<button class="btn " onmouseover="filterSelection('ds')"> Data Science</button></a>
-					<a href="courses/mobility">	<button class="btn " onmouseover="filterSelection('mob')"> Mobility</button></a>
-					<a href="courses/devops">	<button class="btn " onmouseover="filterSelection('devops')"> DevOps</button></a>
-					<a href="courses/cloud">	<button class="btn " onmouseover="filterSelection('cc')"> Cloud Certification</button></a>
-					<a href="courses/cyber">		<button class="btn " onmouseover="filterSelection('cyber')"> 
-						Cyber Security</button></a>
-						<a href="courses/it">	<button class="btn " onmouseover="filterSelection('it')"> 
-							Information Technology</button></a>
-							<a href="courses/digital">	<button class="btn " onmouseover="filterSelection('digi')"> 
-								Digital Marketing </button></a>
-								<a href="courses/erp">	<button class="btn " onmouseover="filterSelection('erp')"> 
-								ERP</button></a>
-								<a href="courses/itcertification">	<button class="btn " onmouseover="filterSelection('itc')"> 
-									IT Certifications</button></a>
-				</div>
-				  
+					<!--<div class="btn-group" role="group" aria-label="Basic example">-->
+				    <a href="courses/uicourses"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('front')"><b>FrontEnd</b></button></a>
+					<a href="courses/backend"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('backf')"><b>BackEnd</b></button></a>
+					<a href="courses/fullstack"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('full')"><b>Fullstack</b></button></a>
+					<a href="courses/functionaltesting"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('fun')"><b>Functional Testing</b></button></a>
+					<a href="courses/datascience"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('ds')"> <b>Data Science</b></button></a>
+					<a href="courses/mobility"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('mob')"><b>Mobility</b></button></a>
+					<!--</div>-->
+					<!--<div class="btn-group" role="group" aria-label="Basic example">-->
+					<a href="courses/devops"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('devops')"><b>DevOps</b></button></a>
+					<a href="courses/cloud"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('cc')"><b>Cloud Computing</b></button></a>
+					<a href="courses/cyber"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('cyber')"> 
+						<b>Cyber Security</b></button></a>
+						<!--<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">-->
+							<center>
+						<a href="courses/it">	<button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('it')"> 
+							<b>Information Technology</b></button></a
+							<a href="courses/digital">	<button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('digi')"> 
+								<b>Digital Marketing </b></button></a>
+								<a href="courses/erp">	<button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('erp')"> 
+								<b>ERP</b></button></a>
+								<a href="courses/itcertification">	<button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('itc')"> 
+									<b>IT Certifications</b></button></a>
+				<!--</div>-->
+							</center>
+			<!--</div>-->
+		</div>
 				 <div class="container text-center">
 				 
 
@@ -409,7 +421,7 @@ $('.sel__box__options').click(function() {
 					  <div class="content">
 					  <img src="{% static 'staticHome/images/advancedui.jpg'%}"  style="width:100%">
 					  <a href="courses/coursepage/advancedui"
-					  style="color:black; text-decoration:none;">		<p class="c-title">Advanced UI</p></a>
+					  style="color:black; text-decoration:none;"><p class="c-title">Advanced UI</p></a>
 						
 						
 						
