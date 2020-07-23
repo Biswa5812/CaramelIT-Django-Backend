@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Front-End</title>
+	<title>FrontEnd</title>
   <link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}">
    <meta charset="utf-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" type="image/jpg" href="images/cr.jpg">
+	<link rel="shortcut icon" type="image/jpg" href="../../static/images/Caramel-full-Logo1.jpg" style="border-radius: 40px 0px 0px 40px;">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%CPT+Serif:400,700,400italic' rel='stylesheet'>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -20,7 +20,16 @@
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> -->
 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
+<style>
+.h-100{
+  border-radius: 20px;
+  border-color: #292C7D;
+  border-style: double;
+}
+.card-img-top{
+  border-radius: 20px 20px 0 0;
+}
+</style>
 
 
 </head>
@@ -32,7 +41,7 @@
         <nav class="navbar navbar-expand-md navbar-light  naving1" >
         <div class="container-fluid">
         <a class="navbar-brand" href="../../../staticHome/templates/staticHome/academy.html">
-          <img class="logo1 horizontal-logo" src="../images/caramelacademy.png" width="200px" alt="forecastr logo">
+          <img class="logo1 horizontal-logo" src="../../static/images/caramelacademy.jpeg" width="200px" alt="forecastr logo">
           </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
           <span class="navbar-toggler-icon"></span>
@@ -40,7 +49,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
           <li class="nav-item naving-item">
-            <a class="nav-link px-lg-4 font-weight-bold alink" href="../index.html">IT Services Home</a>
+            <a class="nav-link px-lg-4 font-weight-bold alink" href="/">IT Services Home</a>
           </li>
           <li class="nav-item dropdown dropdowns naving-item">
             <div class="dropdown">
@@ -145,7 +154,7 @@
           
           
           <li class="nav-item naving-item">
-            <a class="nav-link alink px-lg-4 font-weight-bold" href="../nodeindexcontactform/contactform.html">Contact Us</a>
+            <a class="nav-link alink px-lg-4 font-weight-bold" href="/contact/academycontact">Contact Us</a>
           </li>
           </ul>
         </div>
@@ -159,69 +168,89 @@
      <!---section1-->
      <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-8 ccontent">
-            <h3>Front-End</h3>
-            <p>
-              User interface (UI) developers combine programming, 
-              psychology and creative design to craft intuitive controls for software and hardware. ...
-               There is a range of UI development classes and college 
-              degrees featuring coursework in the skills needed to become a user interface developer.
+        <div class="col-lg-7 ccontent">
+            <h3 style="margin: 10px;">FrontEnd</h3>
+            <p style="margin: 10px;">
+              User Interface(UI) developers combine programming, 
+              psychology and creative design to craft intuitive controls for software and hardware.
+              Examples of this broad concept of user interfaces include the interactive aspects of 
+              computer operating systems, hand tools, heavy machinery operator controls, and process controls.
             </p>
         </div>
-        <div class="col-lg-4 cimage">
-            <img src="../images/headimg.jpg">
+        <div class="col-lg-5 cimage">
+            <img src="../../static/images/headimg.jpg" style="height:76%; margin: 8px; border-radius: 16px;">
         </div>
        </div>
        <div class="container-fluid"><h1 class="lasthead">Courses Listing:</h1>
         <div class="row"id="cards1">
           <div class="coursefirst">
+            <div class="card h-100">
             <div class="coursesecond">
-              <a href="coursepage/coreui"><img id="coursesimg" src="../images/core ui.jpeg" ></a>
+              <a href="coursepage/coreui"><img id="coursesimg" src="../../static/images/core ui.jpeg" class="card-img-top"></a>
             </div>
             <div class="coursethird">
-              <p>Core UI</p>
+              <div class="card-body">
+              <div class="card-title"><h4><center><strong>FrontEnd</strong></center></h4></div>
+              </div>
             </div>
           </div>
+        </div>
 
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/advancedui"><img id="coursesimg" src="../images/advancedui.jpg" ></a>
-            </div>
+              <div class="card h-100">
+              <a href="coursepage/advancedui"><img id="coursesimg" class="card-img-top" src="../../static/images/advancedui.jpg" ></a>
             <div class="coursethird">
-              <p>Advanced UI</p>
+              <div class="card-body">
+              <div class="card-title"><h4><center><strong>Advanced UI</strong></center></h4></div>
+              </div>
+              </div>
+              </div>
             </div>
           </div>
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/angularjs"><img id="coursesimg" src="../images/angular.png" ></a>
-            </div>
+              <div class="card h-100">
+              <a href="coursepage/angularjs"><img id="coursesimg" class="card-img-top" src="../../static/images/angular.png" ></a>
             <div class="coursethird">
-              <p>Angular JS</p>
+              <div class="card-body">
+                <div class="card-title"><h4><center><strong>Angular JS</strong></center></h4></div>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+          <div class="coursefirst">
+            <div class="coursesecond">
+              <div class="card h-100">
+              <a href="coursepage/reactjs"><img id="coursesimg" class="card-img-top" src="../../static/images/react2.jpg" ></a>
+            <div class="card-body">
+            <div class="coursethird">
+              <div class="card-title"><h4><center><strong>React JS</strong></center></h4></div>
+            </div>
+            </div>
+            </div>
             </div>
           </div>
           <div class="coursefirst">
+            <div class="card h-100">
             <div class="coursesecond">
-              <a href="coursepage/reactjs"><img id="coursesimg" src="../images/react2.jpg" ></a>
-            </div>
+              <a href="coursepage/vuejs"><img id="coursesimg" class="card-img-top" src="../../static/images/vue.js1.jpeg" ></a>
             <div class="coursethird">
-              <p>React JS</p>
+              <div class="card-body">
+              <div class="card-title"><h4><center><strong>Vue JS</strong></center></h4></div>
+            </div>
             </div>
           </div>
-          <div class="coursefirst">
-            <div class="coursesecond">
-              <a href="coursepage/vuejs"><img id="coursesimg" src="../images/vue.js1.jpeg" ></a>
-            </div>
-            <div class="coursethird">
-              <p>Vue JS</p>
-            </div>
+          </div>
           </div>
           <!-- start -->
         </div>
    
        </div>
      </div>
-  </div>
- 
+ </div>
+
   
 
 <!---footer section start--->
@@ -231,7 +260,7 @@
 	<div class="contai">
 		<div class="footer text-center">
 			<div>
-				<div class="row mb-5">
+				<div class="row justify-content-md-center">
 					<div class="col-12">
 						<p class="mb-0" id="socialmedia1" style="overflow-y: hidden;padding-top: 40px;">
 							<a href="https://www.facebook.com/caramelacademy/" class="p-2"><span class="fa fa-facebook-square" style="font-size:36px;color: #292C7D;"></span></a>
