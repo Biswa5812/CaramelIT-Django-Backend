@@ -281,27 +281,41 @@ $('.sel__box__options').click(function() {
 	</script>
 
 
+	<script type="text/javascript">
+   function toggle_visibility(colaapse) {
+       var e = document.getElementById(colaapse);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+   }
+</script>
+
 
 <section class="working-section" id="working">
-	<div class="row py-5">
+	<div class="row py-5" >
 		<div class="col-lg-8 col-md-6 col-12">
 		
-			<h2 class="font-weight-bold tophead1 text-right" style="color: rgba(0,191,255 ,1)">	<button class="collapse-btn-2" id="margin-lefts" 
-				data-toggle="collapse" data-target="#colaapse" >
+			<h2 class="font-weight-bold tophead1 text-right" style="color: rgba(0,191,255 ,1)">	
+			<button class="collapse-btn-2" id="margin-lefts"  data-toggle="collapse" data-target="#colaapse"  >
 				<img src="{% static 'staticHome/images/drop-down-arrow.png'%}" alt="" srcset="">
 			</button> <p class="m-left">SHOW MORE</p> HOW WE WORK</h2>
 			
 		</div>
+
+		<!-- <button class="collapse-btn collapsed" data-toggle="collapse" data-target="#demo" style="margin-right:50px;" aria-expanded="false">
+			<img src="/static/staticHome/images/drop-down-arrow.png" alt="" srcset="">
+		</button> -->
 	
-	<div class="col-lg-4 col-md-6 col-12">
+	<!-- <div class="col-lg-4 col-md-6 col-12" >
 	<img src="{% static 'staticHome/images/show18.png'%}" class="img-fluid imgwidth">
 	</div>
 	</div>
 	<div class="container -fluid ">
 		<div class="row text-center">
-			<!-- <div class="col-md-1">
+			 <div class="col-md-1">
 	
-			</div> -->
+			</div> 
 			<div id="colaapse" class="grid-container2 collapse"
 			 style="
 			display: grid;
@@ -309,7 +323,7 @@ $('.sel__box__options').click(function() {
   background-color: white;
   align-items: center;
   margin-left: 10%;
-  margin-right: 10%;">
+		margin-right: 10%;">
 				<div><a href=""><img src="{% static 'staticHome/images/grid/1.png' %}"></a></div>
 				<div><a href=""><img src="{% static 'staticHome/images/grid/2.png'%}"></a></div>
 				<div><a href=""><img src="{% static 'staticHome/images/grid/3.png' %}"></a></div>
@@ -325,11 +339,25 @@ $('.sel__box__options').click(function() {
 				
 			
 		</div>  
-			<!-- <div class="col-md-1">
+			<div class="col-md-1">
 	
-			</div> -->
+			</div> 
 		</div>
-	</div>
+	</div> -->
+	<div class="container-fluid"  >
+		<div class="row">
+
+			<div class="col-md-12 col-lg-12 col-12 ">
+
+	 <a href="https://caramelit.com/"><img id="colaapse" class="collapse" src="../../static/staticHome/images/w23.jpg"></a>
+
+
+			</div>
+		</div>
+
+</div>
+
+
 </section>
 <!-------------------WORKING END-------------------------->
 <!-------------------PROGRAMS START-------------------------->
