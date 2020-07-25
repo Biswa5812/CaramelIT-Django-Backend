@@ -101,6 +101,7 @@ urlpatterns = [
     path('business/operations', staticviews.operations, name="operations"),
     path('business/Application', staticviews.Application, name="Application"),
     # Courses
+    path('courses/view/<int:courseID>', courseviews.view_course, name="view_course"),
     path('courses/uicourses',courseviews.frontend, name='frontend'),
     path('courses/backend', courseviews.backend, name="backend"),
     path('courses/fullstack', courseviews.fullstack, name="fullstack"),
