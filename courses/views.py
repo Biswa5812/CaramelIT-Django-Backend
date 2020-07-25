@@ -106,43 +106,56 @@ def coreui(request):
     return render(request, 'courses/coursepage/coreui1.html') #, {'course' : course[0], 'course_resource' : course_resource, 'resource' : course_resource[0].resourse_link, 'lectures' : len(course_resource)})
 
 def frontend(request):
-    return render(request,'courses/uicourses.html')
+    course = Course.objects.filter(subcategory_name='Front-End').values()
+    return render(request,'courses/uicourses.html',{'data':course})
 
 def backend(request):
-    return render(request, 'courses/backend.html')
+    course = Course.objects.filter(subcategory_name='Back-End').values()
+    return render(request, 'courses/backend.html', {'data':course})
 
 def fullstack(request):
-    return render(request, 'courses/fullstack.html')
+    course = Course.objects.filter(subcategory_name='Full Stack').values()
+    return render(request, 'courses/fullstack.html',{'data':course})
 
 def functionaltesting(request):
-    return render(request, 'courses/functionaltesting.html')
+    course = Course.objects.filter(subcategory_name='Functionality Testing').values()
+    return render(request, 'courses/functionaltesting.html',{'data':course})
 
 def mobility(request):
-    return render(request, 'courses/mobility.html')
+    course = Course.objects.filter(subcategory_name='Mobility').values()
+    return render(request, 'courses/mobility.html',{'data':course})
 
 def devops(request):
-    return render(request, 'courses/devops.html')
+    course = Course.objects.filter(subcategory_name='Devops').values()
+    return render(request, 'courses/devops.html',{'data':course})
 
 def datascience(request):
-    return render(request, 'courses/datascience.html')
+   course = Course.objects.filter(subcategory_name='Data Science').values()
+   return render(request, 'courses/datascience.html', {'data':course})
 
 def cloud(request):
-    return render(request, 'courses/cloud.html')
+    course = Course.objects.filter(subcategory_name='Cloud Computing').values()
+    return render(request, 'courses/cloud.html',{'data':course})
 
 def cyber(request):
-    return render(request, 'courses/cyber.html')
+    course = Course.objects.filter(subcategory_name='Cyber Security').values()
+    return render(request, 'courses/cyber.html',{'data':course})
 
 def digital(request):
-    return render(request, 'courses/digital.html')
+    course = Course.objects.filter(subcategory_name='Digital Marketting').values()
+    return render(request, 'courses/digital.html',{'data':course})
 
 def erp(request):
-    return render(request, 'courses/erp.html')
+    course = Course.objects.filter(subcategory_name='ERP').values()
+    return render(request, 'courses/erp.html',{'data':course})
 
 def it(request):
-    return render(request, 'courses/it.html')
+    course = Course.objects.filter(subcategory_name='IT').values()
+    return render(request, 'courses/it.html',{'data':course})
 
 def itcertification(request):
-    return render(request, 'courses/itcertification.html')
+    course = Course.objects.filter(subcategory_name='IT Certification').values()
+    return render(request, 'courses/itcertification.html',{'data':course})
 
 def advancedui(request):
     return render(request, 'courses/coursepage/advancedui.html')
