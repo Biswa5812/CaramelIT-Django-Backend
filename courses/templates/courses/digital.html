@@ -30,7 +30,7 @@
         <div class="container-fluid" id="coursenav">
         <nav class="navbar navbar-expand-md navbar-light  naving1" >
         <div class="container-fluid">
-        <a class="navbar-brand" href="../../../staticHome/templates/staticHome/academy.html">
+        <a class="navbar-brand" href="../academy">
           <img class="logo1 horizontal-logo" src="../images/caramelacademy.png" width="200px" alt="forecastr logo">
           </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
@@ -169,16 +169,21 @@
        </div>
        <div class="container-fluid"><h1 class="lasthead">Courses Listing:</h1>
         <div class="row" id="cards1">
+
+          {% for i in data%}
+
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/digitalmarketingfoundation"><img id="coursesimg" src="../images/digifound.jpg" ></a>
+              <a href="view/{{i.course_id}}"><img id="coursesimg" src="../images/digifound.jpg" ></a>
             </div>
             <div class="coursethird">
-              <p>Digital Marketing Foundation</p>
+              <p>{{i.course_name}}</p>
             </div>
           </div>
 
-          <div class="coursefirst">
+        {%endfor%}
+
+          <!-- <div class="coursefirst">
             <div class="coursesecond">
               <a href="coursepage/digitalmarketingexpert"><img id="coursesimg" src="../images/digimarketexpert.jpg" ></a>
             </div>
@@ -251,7 +256,7 @@
               <p>Branding</p>
             </div>
           </div>
-          <!-- start -->
+          start -->
         </div>
    
        </div>
