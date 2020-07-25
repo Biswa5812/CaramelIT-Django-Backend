@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Fullstack</title>
+	<title>full stack</title>
   <link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}">
    <meta charset="utf-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" type="image/jpg" href="../../static/images/Caramel-full-Logo1.jpg">
+	<link rel="shortcut icon" type="image/jpg" href="images/cr.jpg">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%CPT+Serif:400,700,400italic' rel='stylesheet'>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -30,8 +30,8 @@
         <div class="container-fluid" id="coursenav">
         <nav class="navbar navbar-expand-md navbar-light  naving1" >
         <div class="container-fluid">
-        <a class="navbar-brand" href="../../../staticHome/templates/staticHome/academy.html">
-          <img class="logo1 horizontal-logo" src="../../static/images/caramelacademy.jpeg" width="200px" alt="forecastr logo">
+        <a class="navbar-brand" href="../academy">
+          <img class="logo1 horizontal-logo" src="{%static 'images/caramelacademy.png' %}" width="200px" alt="forecastr logo">
           </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
           <span class="navbar-toggler-icon"></span>
@@ -168,18 +168,23 @@
        </div>
        <div class="container-fluid"><h1 class="lasthead">Courses Listing:</h1>
         <div class="row"id="cards1">
-          <div class="coursefirst">
-            <div class="coursesecond">
-              <a href="coursepage/corejava"><img id="coursesimg" src="../../static/images/core-java.jpg" ></a>
-            </div>
-            <div class="coursethird">
-              <p>CORE JAVA</p>
-            </div>
-          </div>
 
-          <div class="coursefirst">
+          {%for i in data%}
+
+            <div class="coursefirst">
+              <div class="coursesecond">
+                <a href="view/{{i.course_id}}"><img id="coursesimg" src="../images/core-java.jpg" ></a>
+              </div>
+              <div class="coursethird">
+                <p>{{i.course_name}}</p>
+              </div>
+            </div>
+
+          {%endfor%}
+
+          <!-- <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/advancejava"><img id="coursesimg" src="../../static/images/advanced1.png" ></a>
+              <a href="coursepage/advancejava"><img id="coursesimg" src="../images/advanced1.png" ></a>
             </div>
             <div class="coursethird">
               <p>ADVANCED JAVA</p>
@@ -187,7 +192,7 @@
           </div>
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/fullstacknet"><img id="coursesimg" src="../../static/images/full stack.net.jpg" ></a>
+              <a href="coursepage/fullstacknet"><img id="coursesimg" src="../images/full stack.net.jpg" ></a>
             </div>
             <div class="coursethird">
               <p>.Net</p>
@@ -195,7 +200,7 @@
           </div>
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/dotnetcore"><img id="coursesimg" src="../../static/images/.net core.jpeg" ></a>
+              <a href="coursepage/dotnetcore"><img id="coursesimg" src="../images/.net core.jpeg" ></a>
             </div>
             <div class="coursethird">
               <p>.NetCore</p>
@@ -203,7 +208,7 @@
           </div>
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/mean"><img id="coursesimg" src="../../static/images/mean1.jpg" ></a>
+              <a href="coursepage/mean"><img id="coursesimg" src="../images/mean1.jpg" ></a>
             </div>
             <div class="coursethird">
               <p>MEAN</p>
@@ -211,7 +216,7 @@
           </div>
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/measn"><img id="coursesimg" src="../../static/images/measn.jpg" ></a>
+              <a href="coursepage/measn"><img id="coursesimg" src="../images/measn.jpg" ></a>
             </div>
             <div class="coursethird">
               <p>MEASN</p>
@@ -219,7 +224,7 @@
           </div>
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/mevn"><img id="coursesimg" src="../../static/images/mevn.jpg" ></a>
+              <a href="coursepage/mevn"><img id="coursesimg" src="../images/mevn.jpg" ></a>
             </div>
             <div class="coursethird">
               <p>MEVN</p>
@@ -227,7 +232,7 @@
           </div>
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/golang"><img id="coursesimg" src="../../static/images/golang.png" ></a>
+              <a href="coursepage/golang"><img id="coursesimg" src="../images/golang.png" ></a>
             </div>
             <div class="coursethird">
               <p>Golang</p>
@@ -235,12 +240,12 @@
           </div>
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/rubyfullstack"><img id="coursesimg" src="../../static/images/ruby1.jpg" ></a>
+              <a href="coursepage/rubyfullstack"><img id="coursesimg" src="../images/ruby1.jpg" ></a>
             </div>
             <div class="coursethird">
               <p>Ruby</p>
             </div>
-          </div>
+          </div> -->
           
           <!-- start -->
         </div>
