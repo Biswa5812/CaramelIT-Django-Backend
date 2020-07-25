@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}">
    <meta charset="utf-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" type="image/jpg" href="../../static/images/Caramel-full-Logo1.jpg">
+	<link rel="shortcut icon" type="image/jpg" href="images/cr.jpg">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%CPT+Serif:400,700,400italic' rel='stylesheet'>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -30,8 +30,8 @@
         <div class="container-fluid" id="coursenav">
         <nav class="navbar navbar-expand-md navbar-light  naving1" >
         <div class="container-fluid">
-        <a class="navbar-brand" href="/academy">
-          <img class="logo1 horizontal-logo" src="../static/images/caramelacademy.png" width="200px" alt="forecastr logo">
+        <a class="navbar-brand" href="../academy">
+          <img class="logo1 horizontal-logo" src="../images/caramelacademy.png" width="200px" alt="forecastr logo">
           </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
           <span class="navbar-toggler-icon"></span>
@@ -142,7 +142,7 @@
 
 
           <li class="nav-item naving-item">
-            <a class="nav-link alink px-lg-4 font-weight-bold" href="/contact/academycontact">Contact Us</a>
+            <a class="nav-link alink px-lg-4 font-weight-bold" href="../nodeindexcontactform/contactform.html">Contact Us</a>
           </li>
           </ul>
         </div>
@@ -163,23 +163,27 @@
             </p>
         </div>
         <div class="col-lg-4 cimage">
-            <img src="../static/images/cyber security.jpg">
+            <img src="../images/cyber security.jpg">
         </div>
        </div>
        <div class="container-fluid"><h1 class="lasthead">Courses Listing:</h1>
         <div class="row" id="cards1">
-          <div class="coursefirst">
-            <div class="coursesecond">
-              <a href="coursepage/ccsp"><img id="coursesimg" src="../static/images/cissp2.jpg" ></a>
-            </div>
-            <div class="coursethird">
-              <p>CISSP</p>
-            </div>
-          </div>
+          {%for i in data%}
 
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/cisa"><img id="coursesimg" src="../static/images/cisa1.jpg" ></a>
+              <a href="view/{{i.course_id}}"><img id="coursesimg" src="../images/cissp2.jpg" ></a>
+            </div>
+            <div class="coursethird">
+              <p>{{i.course_name}}</p>
+            </div>
+          </div>
+
+          {%endfor%}
+
+          <!-- <div class="coursefirst">
+            <div class="coursesecond">
+              <a href="coursepage/cisa"><img id="coursesimg" src="../images/cisa1.jpg" ></a>
             </div>
             <div class="coursethird">
               <p>CISA</p>
@@ -187,7 +191,7 @@
           </div>
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/ceh"><img id="coursesimg" src="../static/images/ceh.jpg" ></a>
+              <a href="coursepage/ceh"><img id="coursesimg" src="../images/ceh.jpg" ></a>
             </div>
             <div class="coursethird">
               <p>CEH</p>
@@ -195,7 +199,7 @@
           </div>
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/comptiasecurity"><img id="coursesimg" src="../static/images/comptiasecurity.jpg" ></a>
+              <a href="coursepage/comptiasecurity"><img id="coursesimg" src="../images/comptiasecurity.jpg" ></a>
             </div>
             <div class="coursethird">
               <p>Comptia Security++</p>
@@ -203,12 +207,12 @@
           </div>
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/cism"><img id="coursesimg" src="../static/images/cism1.jpg" ></a>
+              <a href="coursepage/cism"><img id="coursesimg" src="../images/cism1.jpg" ></a>
             </div>
             <div class="coursethird">
               <p>CISM</p>
             </div>
-          </div>
+          </div> -->
           <!-- start -->
         </div>
    
