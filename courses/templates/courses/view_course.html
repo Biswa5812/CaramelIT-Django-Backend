@@ -415,8 +415,12 @@
             <div class="row container-fluid">
                 <div class="col-md-8">
                     <div class="newDiv">
-						<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSktIJ_uNUy7zihr46kxioOV1k-E3BCjvuk2Jdi2uzZ6Q8DzlHPZXV0qHkX4q99fA/embed?start=false&loop=false&delayms=3000" frameborder="0" id="course-img" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-					</div>
+			    {% for resource in data1 %}
+							{% if resource.resourse_link != 'NIL'%}
+								<iframe src="{{resource.resourse_link}}" frameborder="0" id="course-img" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+							{%endif%}
+						{% endfor %}
+						</div>
                 </div>
                 
                 
@@ -462,12 +466,7 @@
 						    </div>
 						    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 						      <div class="card-body">
-						        Pure and Transparent code is devoid of redundant components.<br>
-						        This Means also mobile devices where the navigation is easy and intuitive in a desktop or laptop.<br>
-						        Core UI Layout API Lets you custiomize your project for almost any device - be it mobile webapp or web.<br>
-						        Core UI is the fastest way to build a modern dashboard for any platforms , browser or device<br>
-						        Core UI- Admin Kit is not just another admin template<br>
-						        It goes way beyond hitherto admin templates thanks to transparent code and file structure<br>
+						        {{ data.course_description}}
 						      </div>
 						    </div>
 						</div>
