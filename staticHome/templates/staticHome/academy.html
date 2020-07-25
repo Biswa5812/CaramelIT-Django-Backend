@@ -23,12 +23,17 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	
 		 <style>
-		
-		
-			
-			
-			
-			</style>
+		.express-btn{border-radius: 10px 10px 10px 10px;}
+		.sel sel--black-panther{text-align: left;}
+		.middlebox{text-align: right;}
+		.sub-program-button{
+			border: 10px;
+			margin: 10px;
+		}
+		.c-size{
+			border-top: 10px;
+		}
+		</style>
 </head>
 <body class="body-overflow" style="font-family: 'Times New Roman', Times, serif;">
 	<div class="acaheader" id="topheader">
@@ -86,18 +91,18 @@
 				<div class="row banner3" id="homeid1">
 					<div class="col-md-6 col-lg-6 col-12">
 					<div data-aos="flip-left"data-aos-duration="2000"data-aos-easing="ease-out-cubic">
-					<h1 > DRIVE YOUR TRANSFORMATION WITH US </h1>
-						<p> Be the first person to transform yourself with our unique & world class corporate level trainings & industry specific real time scenario based hands-on assignments </p>
+					<h1 style="color: black;"> DRIVE YOUR TRANSFORMATION WITH US </h1>
+						<p style="text-align: left; margin-left: 28px;color:rgb(0, 0, 0)"> Be the first person to transform yourself with our unique & world class corporate level trainings & industry specific real time scenario based hands-on assignments </p>
 						<div class="learn3">
 						<a href="#learnmore" class="express-btn">LEARN MORE</a>
-						<a href="{% static 'broouchure.pdf' %}" download class="banner2 ml-lg-5">DOWNLOAD</a>
+						<a href="{% static 'broouchure.pdf' %}" download class="banner2 ml-lg-5" style = "border-radius: 10px 10px 10px 10px;">DOWNLOAD</a>
 						</div>
 						</div>
 					</div>
 					
 					 <div class="col-md-6 col-lg-6 col-12 text-center1">
 						<!-- <div data-aos="fade-left"data-aos-duration="2000"> -->
- 							<img src="{% static 'staticHome/images/show4.png'%}" width="100%" height="60%" >
+ 							<img src="{% static 'staticHome/images/show4.png'%}" width="90%" height="60%" >
 						</div>
  				</div>
 			</div>
@@ -123,9 +128,6 @@
 	<p class="para-side">SHOW MORE</p>
 	<button class="collapse-btn" data-toggle="collapse" data-target="#demo" style="margin-right:50px;">
 		<img src="{% static 'staticHome/images/drop-down-arrow.png'%}" alt="" srcset="">
-		
-	
-	
 	</button>    
 	
 	
@@ -141,7 +143,7 @@
 
 			<div class="col-md-12 col-lg-12 col-12 ">
 
-	 <a href="https://caramelit.com/"><img id="demo" class="collapse" src="{% static 'staticHome/images/caramelitservices.png'%}"></a>
+	 <a href="https://caramelit.com/"><img id="demo" class="collapse" src="../../static/staticHome/images/caramelitservices.png"></a>
 
 
 			</div>
@@ -166,20 +168,20 @@
 	
 </div>
 	<div class="col-lg-8 col-md-6 col-12">
-	
 	<h2 class="font-weight-bold tophead1" style="color: rgba(124,77,255 ,1)">LET US KNOW MORE ABOUT YOU</h2>
 	</div>
 	</div>
-	<div class="container-fluid">
+	<div class="outer-conatiner">
 	<div class="row ">
-		
 		<div id="no-space" class="col-md-12 col-lg-12 col-12">
-	<div class="middleblock" style=" background-image: url({%static 'staticHome/images/bgmid.jpg' %});">
+	<div class="middleblock" style=" background-image: url('/static/staticHome/images/bgmid.jpg');">
 		<br>
-		<center>
+		<div class="container-fluid">
+			<!--<div class="row">-->
+		<!--<div class ="col-lg-7 col-sm-12 col-md-12">-->
 		<div class="sel sel--black-panther" onclick="vis();">
 			<select name="select-profession" id="select-profession" onclick="vis();">
-			  <option value="" >Select your Option</option>
+			  <option value="" >Select your Option </option>
 			
 			  <option value="hacker" onclick="vis();">Student (with no IT Knowledge)</option>
 			  <option value="gamer" onclick="vis();">Student (with some IT Knowledge)</option>
@@ -187,9 +189,9 @@
 			  <option value="programmer" onclick="vis();">Professional (with IT Experience)</option>
 			</select>
 		  </div>
+		<!--</div>-->
 		  <hr class="rule">
-		</center>
-		 
+		<!--<div class="col-lg-5 col-sm-12 col-md-12">-->
 		  <div id="middlebox">
 			<a href="https://caramelit.com/">
 		  <div class="counselling">
@@ -207,17 +209,22 @@
 		<div style="display:flex;align-items:flex-end;margin-left:33%">
 			<img src="{% static 'staticHome/images/arrow.png'%}" class="midarrow">
 			<div class="recommend">
-				<a href="search">
+				<a href="https://caramelit.com/">
 			  <h2>RECOMMENDATION</h2></a>
 			  <br>
 		  </div>
 		  </div>
 		</div>
-		<div class="enrollment">
+	<!--</div>-->
+<!--</div>-->
+</div>
+		<div class="enrollment" style ="border-radius: 20px; border-width: 5px; border-color:blue;">
 			<a href="#"><h1>ENROLLMENT</h1></a>
 		</div>
 	</div>
-	</div></div></div>
+	</div>
+	</div>
+	</div>
 	<script>
 		
 		function vis(){
@@ -274,27 +281,41 @@ $('.sel__box__options').click(function() {
 	</script>
 
 
+	<script type="text/javascript">
+   function toggle_visibility(colaapse) {
+       var e = document.getElementById(colaapse);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+   }
+</script>
+
 
 <section class="working-section" id="working">
-	<div class="row py-5">
+	<div class="row py-5" >
 		<div class="col-lg-8 col-md-6 col-12">
 		
-			<h2 class="font-weight-bold tophead1 text-right" style="color: rgba(0,191,255 ,1)">	<button class="collapse-btn-2" id="margin-lefts" 
-				data-toggle="collapse" data-target="#colaapse" >
+			<h2 class="font-weight-bold tophead1 text-right" style="color: rgba(0,191,255 ,1)">	
+			<button class="collapse-btn-2" id="margin-lefts"  data-toggle="collapse" data-target="#colaapse"  >
 				<img src="{% static 'staticHome/images/drop-down-arrow.png'%}" alt="" srcset="">
 			</button> <p class="m-left">SHOW MORE</p> HOW WE WORK</h2>
 			
 		</div>
+
+		<!-- <button class="collapse-btn collapsed" data-toggle="collapse" data-target="#demo" style="margin-right:50px;" aria-expanded="false">
+			<img src="/static/staticHome/images/drop-down-arrow.png" alt="" srcset="">
+		</button> -->
 	
-	<div class="col-lg-4 col-md-6 col-12">
+	<!-- <div class="col-lg-4 col-md-6 col-12" >
 	<img src="{% static 'staticHome/images/show18.png'%}" class="img-fluid imgwidth">
 	</div>
 	</div>
 	<div class="container -fluid ">
 		<div class="row text-center">
-			<!-- <div class="col-md-1">
+			 <div class="col-md-1">
 	
-			</div> -->
+			</div> 
 			<div id="colaapse" class="grid-container2 collapse"
 			 style="
 			display: grid;
@@ -302,7 +323,7 @@ $('.sel__box__options').click(function() {
   background-color: white;
   align-items: center;
   margin-left: 10%;
-  margin-right: 10%;">
+		margin-right: 10%;">
 				<div><a href=""><img src="{% static 'staticHome/images/grid/1.png' %}"></a></div>
 				<div><a href=""><img src="{% static 'staticHome/images/grid/2.png'%}"></a></div>
 				<div><a href=""><img src="{% static 'staticHome/images/grid/3.png' %}"></a></div>
@@ -318,14 +339,26 @@ $('.sel__box__options').click(function() {
 				
 			
 		</div>  
-			<!-- <div class="col-md-1">
+			<div class="col-md-1">
 	
-			</div> -->
+			</div> 
 		</div>
-	</div>
+	</div> -->
+	<div class="container-fluid"  >
+		<div class="row">
+
+			<div class="col-md-12 col-lg-12 col-12 ">
+
+	 <a href="https://caramelit.com/"><img id="colaapse" class="collapse" src="../../static/staticHome/images/w23.jpg"></a>
+
+
+			</div>
+		</div>
+
+</div>
+
+
 </section>
-
-
 <!-------------------WORKING END-------------------------->
 <!-------------------PROGRAMS START-------------------------->
 <section class="program-section " id="ourprogram">
@@ -343,30 +376,27 @@ $('.sel__box__options').click(function() {
 				color: white;">Drive Your Transformation With Us</h1>
 				<p  style="text-align: center; margin-left: 16px;font-weight: bold;
 				padding-top: 10px;color: white; font-size:1.5em;">Collaboration Platform For 
-				All Your Technical Training Needs<br>
-				<span style="color:#07ef07;">Join Us Today</span>
-			</p>
+				All Your Technical Training Needs</p>
+				<center>
+				<button type="button" class="btn btn-success btn-lg active" aria-pressed="true"><a href="user/login" style = "color:aliceblue;">Join Us Today</a></button>
+		        <br>
+                </center>
 
-
-
-		
-
-
-		<button type="button" class="btn program" 
+		<button type="button" class="btn btn-lg active" aria-pressed="true"
 		data-toggle="collapse" data-target="#demo" 
-		style="background-color: white;color:black; height:40px;"  onClick="countClick()">
-		<h6 style="font-weight:600;margin-bottom:250px;   "   >
+		style="background-color:rgb(255, 41, 130);height:50px;color:rgb(245, 245, 245);"onClick="countClick()">
+		<h3  style="font-weight:600;margin-bottom:250px;"  >
 
 			Software Development  
 			 
 			<span class="js-arrow-down">
 				
 			</span>
-		</h6>
+		</h3>
 	
 	</button>
 		
-	
+	<br>
 			
 			   
 		
@@ -375,224 +405,54 @@ $('.sel__box__options').click(function() {
 			<section>
 
 				<div id="myBtnContainer"> <br>
-				<a href="courses/uicourses"><button class="btn " onmouseover="filterSelection('front')">Frontend</button></a>
-					<a href="courses/backend"><button class="btn " onmouseover="filterSelection('backf')">Backend</button></a>
-					<a href="courses/fullstack"><button class="btn " onmouseover="filterSelection('full')">Full Stack</button></a>
-					<a href="courses/functionaltesting">		<button class="btn " onmouseover="filterSelection('fun')"> Functional Testing</button></a>
-					<a href="courses/datascience">	<button class="btn " onmouseover="filterSelection('ds')"> Data Science</button></a>
-					<a href="courses/mobility">	<button class="btn " onmouseover="filterSelection('mob')"> Mobility</button></a>
-					<a href="courses/devops">	<button class="btn " onmouseover="filterSelection('devops')"> DevOps</button></a>
-					<a href="courses/cloud">	<button class="btn " onmouseover="filterSelection('cc')"> Cloud Certification</button></a>
-					<a href="courses/cyber">		<button class="btn " onmouseover="filterSelection('cyber')"> 
-						Cyber Security</button></a>
-						<a href="courses/it">	<button class="btn " onmouseover="filterSelection('it')"> 
-							Information Technology</button></a>
-							<a href="courses/digital">	<button class="btn " onmouseover="filterSelection('digi')"> 
-								Digital Marketing </button></a>
-								<a href="courses/erp">	<button class="btn " onmouseover="filterSelection('erp')"> 
-								ERP</button></a>
-								<a href="courses/itcertification">	<button class="btn " onmouseover="filterSelection('itc')"> 
-									IT Certifications</button></a>
-				</div>
-				  
+					<!--<div class="btn-group" role="group" aria-label="Basic example">-->
+				    <a href="courses/uicourses"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('front')"><b>FrontEnd</b></button></a>
+					<a href="courses/backend"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('backf')"><b>BackEnd</b></button></a>
+					<a href="courses/fullstack"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('full')"><b>Fullstack</b></button></a>
+					<a href="courses/functionaltesting"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('fun')"><b>Functional Testing</b></button></a>
+					<a href="courses/datascience"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('ds')"> <b>Data Science</b></button></a>
+					<a href="courses/mobility"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('mob')"><b>Mobility</b></button></a>
+					<!--</div>-->
+					<!--<div class="btn-group" role="group" aria-label="Basic example">-->
+					<a href="courses/devops"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('devops')"><b>DevOps</b></button></a>
+					<a href="courses/cloud"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('cc')"><b>Cloud Computing</b></button></a>
+					<a href="courses/cyber"><button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('cyber')"> 
+						<b>Cyber Security</b></button></a>
+						<!--<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">-->
+							<center>
+						<a href="courses/it">	<button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('it')"> 
+							<b>Information Technology</b></button></a
+							<a href="courses/digital">	<button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('digi')"> 
+								<b>Digital Marketing </b></button></a>
+								<a href="courses/erp">	<button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('erp')"> 
+								<b>ERP</b></button></a>
+								<a href="courses/itcertification">	<button class="btn btn-outline-primary active sub-program-button" onmouseover="filterSelection('itc')"> 
+									<b>IT Certifications</b></button></a>
+				<!--</div>-->
+							</center>
+			<!--</div>-->
+		</div>
 				 <div class="container text-center">
 				 
 
 				  <div class="row text-center sub-course">
-
-					{% for i in data %}
-
-						{% if i.subcategory_name == 'Front-End' %}
-
-								<div class="column front "  >
-								<div class="content" >
-									<img src="{% static 'staticHome/images/core ui.jpeg'%}"  alt="Mountains" style="width:100%">
-							<a href="courses/view/{{ i.course_id }}"
-							style="color:black; text-decoration:none;">
-									<p class="c-title">{{i.course_name}}</p></a>
-								</div>
-							</div>
-
-						{% endif %}
-
-						{% if i.subcategory_name == 'Back-End' %}
-
-							<div class="column backf">
-								<div class="content">
-								<img src="{% static 'staticHome/images/.net_1.jpg'%}"
-								style="width:100%">
-								<a href="courses/view/{{ i.course_id }}"
-								style="color:black; text-decoration:none;">	
-									<p class="c-title">{{i.course_name}}</p></a>
-							
-								</div>
-							</div>
-							
-						{% endif %}
-
-						{% if i.subcategory_name == 'Full Stack' %}
-
-							<div class="column full">
-								<div class="content">
-								<img src="{% static 'staticHome/images/mevn.jpg'%}"  style="width:100%">
-								<a href="courses/view/{{ i.course_id }}"
-								style="color:black; text-decoration:none;">	
-									<p class="c-title">{{i.course_name}}</p></a>
-							
-								</div>
-							</div>
-							
-						{% endif %}
-
-						{% if i.subcategory_name == 'Functional Testing' %}
-
-							<div class="column fun">
-								<div class="content">
-								<img src="{% static 'staticHome/images/manualtesting.png'%}"  style="width:100%">
-								<a href="courses/view/{{ i.course_id }}"
-								style="color:black; text-decoration:none;">	
-									<p class="c-title">{{i.course_name}} </p>
-								</a>
-								</div>
-							</div>
-
-						{% endif %}
-
-						{% if i.subcategory_name == 'Data Science' %}
-
-							<div class="column ds">
-								<div class="content">
-								<img src="{% static 'staticHome/images/dsc.jpg'%}"  style="width:100%">
-									<a href="courses/view/{{ i.course_id }}"
-									style="color:black; text-decoration:none;">	
-										<p class="c-title">{{i.course_name}}	</p>
-									</a>
-								</div>
-							</div>
-
-						{% endif %}
-
-						{% if i.subcategory_name == 'Mobility' %}
-
-							<div class="column mob">
-								<div class="content">
-									<img src="{% static 'staticHome/images/flutter1.jpg'%}"  style="width:100%">
-									<a href="courses/view/{{ i.course_id }}"
-									style="color:black; text-decoration:none;">	
-									<p class="c-title">{{i.course_name}}</p>
-									</a>
-								</div>
-							</div>
-
-						{% endif %}
-
-						{% if i.subcategory_name == 'DevOps' %}
-
-							<div class="column devops">
-								<div class="content">
-									<img src="{% static 'staticHome/images/devopsfound.jpg'%}"  style="width:100%">
-									<a href="courses/view/{{ i.course_id }}"
-									style="color:black; text-decoration:none;">	
-									<p class="c-title">{{i.course_name}}</p>
-									</a>
-								</div>
-							</div>
-
-						{% endif %}
-
-						{% if i.subcategory_name == 'Cloud Certification' %}
-
-							<div class="column cc">
-								<div class="content">
-									<img src="{% static 'staticHome/images/aws technical.jpg'%}"  style="width:100%">
-								
-									<a href="courses/view/{{ i.course_id }}"
-									style="color:black; text-decoration:none;">
-										<p class="c-title">{{i.course_name}}</p>
-									</a>
-								</div>
-							</div>
-
-						{% endif %}
-
-						{% if i.subcategory_name == 'Cyber Security' %}
-
-							<div class="column cyber">
-								<div class="content">
-									<img src="{% static 'staticHome/images/cissp.jpg'%}"  style="width:100%">
-									<a href="courses/view/{{ i.course_id }}"
-									style="color:black; text-decoration:none;">
-													<p class="c-title">{{i.course_name}}</p>
-									</a>
-								</div>
-							</div>
-							
-						{% endif %}
-
-						{% if i.subcategory_name == 'Information Technology' %}
-
-							<div class="column it">
-								<div class="content">
-											<a href="courses/view/{{ i.course_id }}"
-											style="color:black; text-decoration:none;">
-												<img src="{% static 'staticHome/images/sales force.jpg'%}"  style="width:100%">
-										<p class="c-title">{{i.course_name}}</p>
-										</a>
-								</div>
-							</div>
-							
-						{% endif %}
-
-						{% if i.subcategory_name == 'Digital Marketing' %}
-
-								<div class="column digi">
-									<div class="content">
-										<img src="{% static 'staticHome/images/digital.png'%}"  style="width:100%">
-										<a href="courses/view/{{ i.course_id }}"
-										style="color:black; text-decoration:none;">
-											<p class="c-title">{{i.course_name}}</p>
-									</a>
-									</div>
-								</div>
-							
-						{% endif %}
-
-						{% if i.subcategory_name == 'ERP' %}
-
-							<div class="column erp">
-								<div class="content">
-									<img src="{% static 'staticHome/images/sap.jpg'%}"  style="width:100%">
-									<a href="courses/view/{{ i.course_id }}"
-									style="color:black; text-decoration:none;">
-									<p class="c-title">{{i.course_name}}</p>
-								</a>
-								</div>
-							</div>
-							
-						{% endif %}
-
-						{% if i.subcategory_name == 'IT Certifications' %}
-
-							<div class="column itc">
-								<div class="content">
-									<img src="{% static 'staticHome/images/itil.png'%}"  style="width:100%">
-									<a href="courses/view/{{ i.course_id }}"
-									style="color:black; text-decoration:none;">
-									<p class="c-title">{{i.course_name}}</p>
-								</a>
-								</div>
-							</div>
-							
-						{% endif %}
-
-							
-					{% endfor %}
-					<!-- <div class="column front">
+					<div class="column front text-center"  >
+					  <div class="content" >
+						<img src="{% static 'staticHome/images/core ui.jpeg'%}"  alt="Mountains" style="width:100%">
+				<a href="../courses/coursepage/coreui"
+				 style="color:black; text-decoration:none;">
+				 		<p class="c-title">FrontEnd</p></a>
+						
+					  </div>
+					</div>
+					<div class="column front">
 					  <div class="content">
 					  <img src="{% static 'staticHome/images/advancedui.jpg'%}"  style="width:100%">
 					  <a href="courses/coursepage/advancedui"
-					  style="color:black; text-decoration:none;">	
-					  	<p class="c-title">Advanced UI</p></a>	
+					  style="color:black; text-decoration:none;"><p class="c-title">Advanced UI</p></a>
+						
+						
+						
 					  </div>
 					</div>
 					<div class="column front">
@@ -612,6 +472,9 @@ $('.sel__box__options').click(function() {
 							<p class="c-title">React JS</p></a>
 					  </div>
 					</div>
+					
+
+
 					<div class="column front">
 					  <div class="content">
 					  <img src="{% static 'staticHome/images/vue.jpg'%}"  style="width:100%">
@@ -620,9 +483,9 @@ $('.sel__box__options').click(function() {
 					</a>
 					  </div>
 					</div>
-				   -->
+				  
 			
-					<!-- <div class="column backf">
+					<div class="column backf">
 						<div class="content">
 						<img src="{% static 'staticHome/images/java1.jpg'%}"  style="width:100%">
 						<a href="courses/coursepage/java"
@@ -670,9 +533,9 @@ $('.sel__box__options').click(function() {
 					  
 						</div>
 					  </div>
- -->
 
-					  <!-- <div class="column full">
+
+					  <div class="column full">
 						<div class="content">
 						<img src="{% static 'staticHome/images/core-java.jpg'%}"  style="width:100%">
 						<a href="courses/coursepage/corejava"
@@ -756,6 +619,9 @@ $('.sel__box__options').click(function() {
 						</div>
 					  </div>
 
+
+
+
 					  <div class="column full">
 						<div class="content">
 						<img src="{% static 'staticHome/images/ruby1.jpg'%}"  style="width:100%">
@@ -764,10 +630,9 @@ $('.sel__box__options').click(function() {
 						  <p class="c-title">Ruby </p>
 						</a>
 						</div>
-					  </div> -->
+					  </div>
 
-
-					  <!-- <div class="column fun">
+					  <div class="column fun">
 						<div class="content">
 						<img src="{% static 'staticHome/images/manualtesting.png'%}"  style="width:100%">
 						<a href="courses/coursepage/manualtesting"
@@ -809,12 +674,12 @@ $('.sel__box__options').click(function() {
 									  <p class="c-title">Full Stack Testing </p>
 					  </a>
 						</div>
-					  </div> -->
+					  </div>
 
-
-					  <!-- <div class="column ds">
+					  <div class="column ds">
 						<div class="content">
 						<img src="{% static 'staticHome/images/dsc.jpg'%}"  style="width:100%">
+						
 							  <a href="courses/coursepage/fullstacktesting"
 							  style="color:black; text-decoration:none;">	
 							  	<p class="c-title">DS Bootcamp	</p>
@@ -842,7 +707,7 @@ $('.sel__box__options').click(function() {
 					
 						<a href="courses/coursepage/aimlfoundationcourse"
 						style="color:black; text-decoration:none;">
-							  <p class="c-title">AI / ML Foundation Course</p>
+							  <p class="c-title">AI/ML Foundation Course</p>
 					  </a>
 						</div>
 					  </div>
@@ -923,12 +788,11 @@ $('.sel__box__options').click(function() {
 						style="color:black; text-decoration:none;">	
 							
 						
-						<p class="c-title">AI / ML Expert Course </p>
+						<p class="c-title">AI/ML Expert Course </p>
 					  
 						</div>
-					  </div> -->
-
-					  <!-- <div class="column mob">
+					  </div>
+					  <div class="column mob">
 						<div class="content">
 						<img src="{% static 'staticHome/images/flutter1.jpg'%}"  style="width:100%">
 						<a href="courses/coursepage/flutter"
@@ -997,8 +861,8 @@ $('.sel__box__options').click(function() {
 						<p class="c-title">IOS</p>
 					  </a>
 						</div>
-					  </div> -->
-					  <!-- <div class="column devops">
+					  </div>
+					  <div class="column devops">
 						<div class="content">
 						<img src="{% static 'staticHome/images/devopsfound.jpg'%}"  style="width:100%">
 						<a href="courses/coursepage/devops"
@@ -1067,8 +931,8 @@ $('.sel__box__options').click(function() {
 								  <p class="c-title">Open Stack</p>
 					  </a>
 						</div>
-					  </div> -->
-					  <!-- <div class="column cc">
+					  </div>
+					  <div class="column cc">
 						<div class="content">
 						<img src="{% static 'staticHome/images/aws technical.jpg'%}"  style="width:100%">
 					
@@ -1138,8 +1002,8 @@ $('.sel__box__options').click(function() {
 						  <p class="c-title">Microsoft Azure Expert Certification</p>
 					  </a>
 						</div>
-					  </div> -->
-					  <!-- <div class="column cyber">
+					  </div>
+					  <div class="column cyber">
 						<div class="content">
 						<img src="{% static 'staticHome/images/cissp.jpg'%}"  style="width:100%">
 						<a href="courses/coursepage/cissp"
@@ -1186,9 +1050,9 @@ $('.sel__box__options').click(function() {
 							  </a>
 					  
 						</div>
-					  </div> -->
+					  </div>
 
-					  <!-- <div class="column it">
+					  <div class="column it">
 						<div class="content">
 							<a href="courses/coursepage/salesforce"
 							style="color:black; text-decoration:none;">
@@ -1231,12 +1095,12 @@ $('.sel__box__options').click(function() {
 
 					  </a>
 						</div>
-					  </div> -->
+					  </div>
 
 
 
 
-					  <!-- <div class="column digi">
+					  <div class="column digi">
 						<div class="content">
 						<img src="{% static 'staticHome/images/digital.png'%}"  style="width:100%">
 						<a href="courses/coursepage/digitalmarketingfoundation"
@@ -1345,8 +1209,8 @@ $('.sel__box__options').click(function() {
 						  <p class="c-title">  Branding <br><br> </p>
 					  </a>
 						</div>
-					  </div> -->
-					  <!-- <div class="column erp">
+					  </div>
+					  <div class="column erp">
 						<div class="content">
 						<img src="{% static 'staticHome/images/sap.jpg'%}"  style="width:100%">
 						<a href="courses/coursepage/sap"
@@ -1383,8 +1247,8 @@ $('.sel__box__options').click(function() {
 							  <p class="c-title">  Root Stack</p>
 					  </a>
 						</div>
-					  </div> -->
-					  <!-- <div class="column itc">
+					  </div>
+					  <div class="column itc">
 						<div class="content">
 						<img src="{% static 'staticHome/images/itil.png'%}"  style="width:100%">
 						<a href="courses/coursepage/itilfoundation"
@@ -1393,6 +1257,13 @@ $('.sel__box__options').click(function() {
 					  </a>
 						</div>
 					  </div>
+
+
+					
+
+
+
+
 					  <div class="column itc">
 						<div class="content">
 						<img src="{% static 'staticHome/images/pmp.jpg'%}"  style="width:100%">
@@ -1430,7 +1301,7 @@ $('.sel__box__options').click(function() {
 							  <p class="c-title">  Prince 2 </p>
 </a>
 						</div>
-					  </div> -->
+					  </div>
 
 
 
@@ -1527,7 +1398,7 @@ $('.sel__box__options').click(function() {
 									<img src="{% static 'staticHome/images/core ui.jpeg'%}">  
 								</div>  
 								<div class="sub1">  
-									<h5>Core UI</h5>  
+									<h5>FrontEnd</h5>  
 									  
 									<a href="courses/coursepage/coreui"><button id="read">KNOW MORE</button></a>  
 								</div>  
@@ -1636,7 +1507,7 @@ $('.sel__box__options').click(function() {
 				<img src="{% static 'staticHome/images/core ui.jpeg'%}">  
 			</div>  
 			<div class="sub1">  
-				<h5>CoreUI</h5>  
+				<h5>FrontEnd</h5>  
 				 
 				<a href="courses/coursepage/coreui"><button id="read">KNOW MORE</button></a>  
 			</div>  
