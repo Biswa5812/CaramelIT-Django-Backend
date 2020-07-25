@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
+from courses.models import Course
+
 
 # Defining ticket numbers for contact forms
 service_ticket = 1
@@ -17,7 +19,11 @@ def consortium(request):
     return render(request, 'staticHome/consortium.html')
 
 def academy(request):
-    return render(request, 'staticHome/academy.html')
+    course = Course.objects.all()
+    for c in course:
+        print(c.subcategory_name)
+    return render(request, 'staticHome/academy.html',{'data':course})
+#     return render(request, 'staticHome/academy.html')
 
 def products(request):
     return render(request, 'staticHome/products.html')
