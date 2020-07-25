@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Functional testing</title>
+	<title>functional testing</title>
   <link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}">
    <meta charset="utf-8">
  	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" type="image/jpg" href="../../static/images/Caramel-full-Logo1.jpg">
+	<link rel="shortcut icon" type="image/jpg" href="images/cr.jpg">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700%CPT+Serif:400,700,400italic' rel='stylesheet'>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -28,8 +28,8 @@
         <div class="container-fluid" id="coursenav">
         <nav class="navbar navbar-expand-md navbar-light  naving1" >
         <div class="container-fluid">
-        <a class="navbar-brand" href="../../../staticHome/templates/staticHome/academy.html">
-          <img class="logo1 horizontal-logo" src="../static/images/caramelacademy.png" width="200px" alt="forecastr logo">
+        <a class="navbar-brand" href="../academy">
+          <img class="logo1 horizontal-logo" src="../images/caramelacademy.png" width="200px" alt="forecastr logo">
           </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
           <span class="navbar-toggler-icon"></span>
@@ -140,7 +140,7 @@
           
           
           <li class="nav-item naving-item">
-            <a class="nav-link alink px-lg-4 font-weight-bold" href="/contact/academycontact">Contact Us</a>
+            <a class="nav-link alink px-lg-4 font-weight-bold" href="../nodeindexcontactform/contactform.html">Contact Us</a>
           </li>
           </ul>
         </div>
@@ -162,24 +162,29 @@ Functions (or features) are tested by feeding them input and examining the outpu
      </p>
         </div>
         <div class="col-lg-4 cimage">
-            <img src="../static/images/functionaltesting.png">
+            <img src="../images/functionaltesting.png">
         </div>
        </div>
      </div>
        <div class="container-fluid"><h1 class="lasthead">Courses Listing:</h1>
         <div class="row" id="cards1" >
-          <div class="coursefirst">
-            <div class="coursesecond">
-              <a href="coursepage/manualtesting"><img id="coursesimg" src="../static/images/manualtesting.png"></a>
-            </div>
-            <div class="coursethird">
-              <p>Manual Testing</p>
-            </div>
-          </div>
+
+        {%for i in data%}
 
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/automation"><img id="coursesimg" src="../static/images/automationtesting.png" ></a>
+              <a href="view/{{i.course_id}}"><img id="coursesimg" src="../images/manualtesting.png"></a>
+            </div>
+            <div class="coursethird">
+              <p>{{i.course_name}}</p>
+            </div>
+          </div>
+
+        {%endfor%}
+
+          <!-- <div class="coursefirst">
+            <div class="coursesecond">
+              <a href="coursepage/automation"><img id="coursesimg" src="../images/automationtesting.png" ></a>
             </div>
             <div class="coursethird">
               <p>Automation Testing</p>
@@ -187,7 +192,7 @@ Functions (or features) are tested by feeding them input and examining the outpu
           </div>
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/cloudtesting"><img id="coursesimg" src="../static/images/cloudtesting.png" ></a>
+              <a href="coursepage/cloudtesting"><img id="coursesimg" src="../images/cloudtesting.png" ></a>
             </div>
             <div class="coursethird">
               <p>Cloud Testing</p>
@@ -195,13 +200,13 @@ Functions (or features) are tested by feeding them input and examining the outpu
           </div>
           <div class="coursefirst">
             <div class="coursesecond">
-              <a href="coursepage/fullstacktesting"><img id="coursesimg" src="../static/images/fullstacktesting.png" ></a>
+              <a href="coursepage/fullstacktesting"><img id="coursesimg" src="../images/fullstacktesting.png" ></a>
             </div>
             <div class="coursethird">
-              <p>Fullstack Testing</p>
+              <p>Full Stack Testing</p>
             </div>
           </div>
-         
+          -->
           <!-- start -->
         </div>
    
