@@ -1,5 +1,9 @@
 from django.shortcuts import render, redirect
 from .models import Course, Course_resource, Course_category, Course_subcategory
+import mammoth
+import json
+from bs4 import BeautifulSoup
+from collections import OrderedDict
 
 # List all courses
 def course_list(request):
@@ -45,7 +49,30 @@ def course_resource(request):
     resources = []
     for res in range(int(resource)):
         resources.append(str(res+1))
-    if request.method == 'POST':
+     if request.method == 'POST' and request.FILES['myfile']:
+        course = Course.objects.filter(course_id=courseID)[0]
+        myfile = request.FILES['myfile']
+        # with open(myfile) as docx_file:
+        result = mammoth.convert_to_html(myfile)
+        html = result.value # The generated HTML
+        messages = result.messages # Any messages, such as warnings during conversion
+        table_data = [[cell.text for cell in row("td")]
+                         for row in BeautifulSoup(html)("tr")]
+        for i in table_data:
+            i.pop(0)
+        content = json.dumps(OrderedDict(table_data))
+        Course_res = Course_resource(
+                course=course,
+                resourse_content=content,
+                resourse_name='NIL',
+                resourse_link='NIL',
+                resourse_length='NIL',
+            )
+        Course_res.save()
+        response = redirect('/admin/save_course')
+        response.set_cookie('course_id', courseID)
+        return response
+    if request.method == 'POST' and (request.FILES['myfile']==False):
         course = Course.objects.filter(course_id=courseID)[0]
         for res in resources:
             Course_res = Course_resource(
@@ -94,7 +121,9 @@ def delete_course(request, courseID):
 def view_course(request, courseID):
     course = Course.objects.filter(course_id=courseID)[0]
     course_resource = Course_resource.objects.filter(course = course)
-    return render(request, 'courses/view_course.html', {'data': course,'data1':course_resource,'resource' : course_resource[0].resourse_link, 'lectures' : len(course_resource)})
+    for dataa in course_resource:
+        con = json.loads(dataa.resourse_content)
+    return render(request, 'courses/view_course.html', {'data': course,'data1':course_resource,'resource' : course_resource[0].resourse_link,'content':con, 'lectures' : len(course_resource)})
     
 # Course pages
 def coreui(request):

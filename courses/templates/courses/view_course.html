@@ -432,10 +432,11 @@
                         {{ lectures }} Lectures
                     </div>
 					
-					{% for resource in data1 %}
+					
+					{% for key,value in content.items %}
                     <div class="lec-title" id="{{ resource.resourse_name }}">
-                        <div class = "title" > {{ resource.resourse_name }}</div>
-                        <div class= "lec-duration">{{ resource.resourse_length }}</div>
+                        <div class = "title"  > {{ key }}</div>
+                        <div class= "lec-duration">{{ value }}</div>
 					</div>
 					<script>
 						video = document.getElementById("course-img");
