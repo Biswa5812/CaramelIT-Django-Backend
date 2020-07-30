@@ -49,29 +49,29 @@ def course_resource(request):
     resources = []
     for res in range(int(resource)):
         resources.append(str(res+1))
-     if request.method == 'POST' and request.FILES['myfile']:
-        course = Course.objects.filter(course_id=courseID)[0]
-        myfile = request.FILES['myfile']
+    if request.method == 'POST' and request.FILES['myfile']:
+         course = Course.objects.filter(course_id=courseID)[0]
+         myfile = request.FILES['myfile']
         # with open(myfile) as docx_file:
-        result = mammoth.convert_to_html(myfile)
-        html = result.value # The generated HTML
-        messages = result.messages # Any messages, such as warnings during conversion
-        table_data = [[cell.text for cell in row("td")]
-                         for row in BeautifulSoup(html)("tr")]
-        for i in table_data:
-            i.pop(0)
-        content = json.dumps(OrderedDict(table_data))
-        Course_res = Course_resource(
+         result = mammoth.convert_to_html(myfile)
+         html = result.value # The generated HTML
+         messages = result.messages # Any messages, such as warnings during conversion
+         table_data = [[cell.text for cell in row("td")]
+         for row in BeautifulSoup(html)("tr")]
+         for i in table_data:
+             i.pop(0)
+         content = json.dumps(OrderedDict(table_data))
+         Course_res = Course_resource(
                 course=course,
                 resourse_content=content,
                 resourse_name='NIL',
                 resourse_link='NIL',
                 resourse_length='NIL',
             )
-        Course_res.save()
-        response = redirect('/admin/save_course')
-        response.set_cookie('course_id', courseID)
-        return response
+         Course_res.save()
+         response = redirect('/admin/save_course')
+         response.set_cookie('course_id', courseID)
+         return response
     if request.method == 'POST' and (request.FILES['myfile']==False):
         course = Course.objects.filter(course_id=courseID)[0]
         for res in resources:
