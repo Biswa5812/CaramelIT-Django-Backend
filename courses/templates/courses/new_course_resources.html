@@ -131,7 +131,14 @@
        
             
         </div><br><br>
-        <center>    <form method="POST">
+        <center>    
+            <h4 style="margin-bottom: 20px;">Upload the table of contents</h4>
+            <form style="margin-bottom: 20px;" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="myfile">
+                <button type="submit">Upload</button>
+            </form>
+            <form method="POST">
             {% csrf_token %}
                      {% for resource in resources %}
                      <div class="row">
