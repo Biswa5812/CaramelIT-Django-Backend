@@ -1,113 +1,480 @@
-{%load static %}
+{% load static %}
 
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+      
+        <title>Caramel</title>
+      
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-    <title>User Dashboard</title>
-
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="{%static 'loginRegister/css/style3.css' %}">
-    <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <style>
-        .con{
-        background-position: center;
-        background-image: url("../static/images/student1.jpg");
-        /* background-size: contain; */
-        background-repeat:no-repeat;
-        max-height:100%;
-        max-width: 100%;
-        }
-    </style>
-</head>
-
-<body>
-    <section>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-                
-                <img src="{%static 'images/logo.jpg' %} " alt="" height="50">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">IT Services <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Contact Us <span class="sr-only">(current)</span></a>
-                  </li>
-             
-              </ul>
-            </div>
-          </nav>
-     </section>
-    <div class="wrapper ">
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         
-        <!-- Sidebar  -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-            <center>                <center>    <img src=" {%static 'images/ls.jpg'%}" alt="" height="90"><br>
-                <br><br>
-                <label>Hello {{ut}}, {{ data.first_name}}</label><br>
-                <a  href="/user/logout"
-                ><b>Logout</b></a>
-            </center>
-            </div>
-<hr style="background:white;">
-            <ul class="list-unstyled components">
-               
+        <link href = "https://code.jquery.com/ui/1.12.1/themes/dot-luv/jquery-ui.css"
+        rel = "stylesheet">
+
+        <!-- Custom style -->
+        <link href="{%static 'loginRegister/css/stylesheet_s.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!--chart js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+
+        <script>
+            function openNav() {
+                document.getElementById("mySidebar").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+            }
+            function closeNav() {
+                document.getElementById("mySidebar").style.width = "0";
+                document.getElementById("main").style.marginLeft= "0";
+              }
+            $(function() {
+               var availableTutorials = [
+               'Core UI','Advanced UI','React.js','Vue.js','AngularJS','Asp.net','GoLang','Coure UI Stack','Node.js','Java','Python','Core Java','Advance Java','.Net','.Net Core','MEAN Stack','MESN Stack','MEVN Stack','Ruby'	
+               ];
+               $( "#automplete-3" ).autocomplete({
+                  minLength:1,   
+                  delay:500,   
+                  source: availableTutorials
+               });
+            });
+
+            
+         </script>
+         <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+         <link rel="icon" href="favicon.ico" type="image/x-icon">
+      
+        </head> 
+    
+         
           
-                <li>
-                    <a href="account">Account</a>
-                </li>
-              
-                <li>
-                    <a href="courses">Courses</a>
-                </li>
-                <li>
-                    <a href="#">Enrolled courses</a>
-                </li>
-                <li>
-                    <a href="cart">Cart</a>
-                </li>
-                <!-- <li>
-                    <a href="#">Template</a>
-                </li>
-                <li>
-                    <a href="#">Tools</a>
-                </li> -->
-            </ul>
+        <body>
 
-        
-        </nav>
+        <div id="mySidebar" class="sidebar">
+            <label href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</label>
+            <img class="logo2" src="{% static 'images/caramelacademy.png' %}" width="200px" height="70px">
+            <a href="#"  class="userimg img logo rounded-circle mb-2" style="background-image: url(../static/images/student.jpg);"></a>
+            <label class="name align-content-center" href="#">Hello Jane Doe!</label>
+            <a href="#" class="active"><i class="fa fa-pie-chart" aria-hidden="true" style="color: aliceblue"></i>Dashboard</a>                        
+            <a href="courses"><i class="fa fa-book" aria-hidden="true" style="color: aliceblue"></i>My Cources</a>
+            <a href="#"><i class="fa fa-tasks" aria-hidden="true" style="color: aliceblue"></i>Progress report</a>
+            <a href="#"><i class="fa fa-bell" aria-hidden="true" style="color: aliceblue"></i>Exam Report</a>
+            <a href="#"><i class="fa fa-bookmark" aria-hidden="true" style="color: aliceblue"></i>Wishlist</a>
+            <a href="#"><i class="fa fa-puzzle-piece" aria-hidden="true" style="color: aliceblue"></i>Table list</a>
+            <a href="cart"><i class="fa fa-shopping-cart" aria-hidden="true" style="color: aliceblue"></i>Cart</a>
+            <a href="#"><i class="fa fa-award" aria-hidden="true" style="color: aliceblue"></i>Rewards</a>
+            </div>
 
-        <!-- Page Content  -->
-        <div id="content" class="con">
-
-<!-- <img src="{%static 'images/college.jpg'%}" alt="" height="550" width="100%"> -->
-  
+          <div class="acaheader" id="topheader">
+            <div class="container-fluid text5">
+                <nav class="navbar navbar-expand-lg bg navbar-light">
+                    <button class="navbar-toggler" onclick="openNav()" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                    <label class="dash">Dashboard <i class="fa fa-home" aria-hidden="true" style="color: black"></i></label>
+                    <!-- Toggler/collapsibe Button -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                    <!-- Navbar links -->
+                    <div class="navbar-collapse collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav mr-auto">
+                           
+                        </ul>
+                        <ul class="navbar-nav ml-auto font-weight-bold">
+                            <li class="nav-item">
+                                <form autocomplete="off" action="#">
+                                    <span class="search-input">
+                                    <div class="autocomplete searchbar">
+                                        <input id = "automplete-3" placeholder="Search">
+                                        <a><i class="fa fa-search" type="submit" for="autocomplete-3" style="font-size:25px;background-color:white;" aria-hidden="true"></i></a>
+                                    </div>
+                                </form>
+                            </li>
+                            
+                        </ul>
+                        
+                    </div>
+                    <label class="dash"><a href="/user/logout">Sign out <i class="fa fa-sign-out" aria-hidden="true" style="color: black"></a></i></label>
+                </nav>
+            </div>
         </div>
-    </div>
+        <section class="dashboard">
+            <div class="container-fluid">
+                <div class="row"><label class="section-header">Dashboard</label></div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12 graph">
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                        <script>
+                        var ctx = document.getElementById('myChart').getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['Test1', 'Test2', 'Test3', 'Test4', 'Test5', 'Test6'],
+                                datasets: [{
+                                    label: 'Marks in test',
+                                    data: [12, 19, 3, 5, 2, 3],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.6)',
+                                        'rgba(54, 162, 235, 0.6)',
+                                        'rgba(255, 206, 86, 0.6)',
+                                        'rgba(75, 192, 192, 0.6)',
+                                        'rgba(153, 102, 255, 0.6)',
+                                        'rgba(255, 159, 64, 0.6)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+                        </script>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12 graph">
+                        <canvas id="myChart2" width="100%" height="100"></canvas>
+                        <script>
+                        var ctx = document.getElementById('myChart2').getContext('2d');
+                        var myChart2 = new Chart(ctx, {
+                            type: 'pie',
+                            data: {
+                                labels: ['Section1', 'Section2', 'Section3', 'Section4', 'Section5', 'Section6'],
+                                datasets: [{
+                                    label: 'Course completion',
+                                    data: [12, 19, 3, 5, 2, 3],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.6)',
+                                        'rgba(54, 162, 235, 0.6)',
+                                        'rgba(255, 206, 86, 0.6)',
+                                        'rgba(75, 192, 192, 0.6)',
+                                        'rgba(153, 102, 255, 0.6)',
+                                        'rgba(255, 159, 64, 0.6)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero: true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+                        </script>
+                    </div>
+                </div>
 
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+                <div class="col-lg-12 col-md-12 col-12 graph">
+                    <canvas id="myChart3" width="" height=""></canvas>
+                    <script>
+                    var ctx = document.getElementById('myChart3').getContext('2d');
+                    var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+                    gradientStroke.addColorStop(0, "#0297f3");
+                    gradientStroke.addColorStop(1, "#01f0c6 ");
+                    var gradientFill = ctx.createLinearGradient(500, 0, 100, 0);
+                    gradientFill.addColorStop(0, "rgba(2, 151, 243, 0.3)");
+                    gradientFill.addColorStop(1, "rgba(1, 240, 108, 0.3)");
+                    var myChart3 = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ['Test1', 'Test2', 'Test3', 'Test4', 'Test5', 'Test6'],
+                            datasets: [{
+                                label: 'Marks in test',
+                                data: [12, 19, 3, 5, 2, 3],
+                                borderColor:               gradientStroke,
+                                pointBorderColor:          gradientStroke,
+                                pointBackgroundColor:      gradientStroke,
+                                pointHoverBackgroundColor: gradientStroke,
+                                pointHoverBorderColor:     gradientStroke,
+                                borderWidth: 6,
+                                fill: true,
+                                fill: true,
+                                backgroundColor: gradientFill,
+                            }]
+                        },
+                        options: {
+                                title:{
+                                        display:true,
+                                        fontSize:30,
+                                },
+                                animation: {
+                                    easing: "easeInOutBack"
+                                },
+                                legend: {
+                                    position: "bottom"
+                                },
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            fontColor: "rgba(0,0,0,0.5)",
+                                            fontStyle: "bold",
+                                            beginAtZero: true,
+                                            maxTicksLimit: 5,
+                                            padding: 20
+                                        },
+                                        gridLines: {
+                                            drawTicks: false,
+                                            display: false
+                                        }
 
-  
-</body>
-
+                                    }],
+                                    xAxes: [{
+                                        gridLines: {
+                                            zeroLineColor: "transparent"
+                                        },
+                                        ticks: {
+                                            padding: 20,
+                                            fontColor: "rgba(0,0,0,0.5)",
+                                            fontStyle: "bold"
+                                            
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+                
+            </div>
+            
+            <div class="row m-3 ">
+                <div class="col-md-5 ml-5">
+                  <div class="box box-aqua">
+                    <div class="box-header ui-sortable-handle" style="cursor: move;">
+                      <i class="ion ion-clipboard"></i>
+                      <h3 class="box-title">TASKS TO DO</h3>
+                      
+                    </div>
+               
+                    <div class="box-body">
+                      <ul class="todo-list ui-sortable">
+                        <li>
+                          <span class="handle ui-sortable-handle">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <i class="fa fa-ellipsis-v"></i>
+                          </span>
+                          <input type="checkbox" value="" name="">
+                          <span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                          <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+                          <div class="tools">
+                            <i class="fa fa-edit"></i>
+                            <i class="fa fa-trash-o"></i>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="handle ui-sortable-handle">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <i class="fa fa-ellipsis-v"></i>
+                          </span>
+                          <input type="checkbox" value="" name="">
+                          <span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                          <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
+                          <div class="tools">
+                            <i class="fa fa-edit"></i>
+                            <i class="fa fa-trash-o"></i>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="handle ui-sortable-handle">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <i class="fa fa-ellipsis-v"></i>
+                          </span>
+                          <input type="checkbox" value="" name="">
+                          <span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elitr</span>
+                          <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
+                          <div class="tools">
+                            <i class="fa fa-edit"></i>
+                            <i class="fa fa-trash-o"></i>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="handle ui-sortable-handle">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <i class="fa fa-ellipsis-v"></i>
+                          </span>
+                          <input type="checkbox" value="" name="">
+                          <span class="text">LLorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                          <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
+                          <div class="tools">
+                            <i class="fa fa-edit"></i>
+                            <i class="fa fa-trash-o"></i>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="handle ui-sortable-handle">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <i class="fa fa-ellipsis-v"></i>
+                          </span>
+                          <input type="checkbox" value="" name="">
+                          <span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                          <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
+                          <div class="tools">
+                            <i class="fa fa-edit"></i>
+                            <i class="fa fa-trash-o"></i>
+                          </div>
+                        </li>
+                        <li>
+                          <span class="handle ui-sortable-handle">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <i class="fa fa-ellipsis-v"></i>
+                          </span>
+                          <input type="checkbox" value="" name="">
+                          <span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elitr</span>
+                          <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
+                          <div class="tools">
+                            <i class="fa fa-edit"></i>
+                            <i class="fa fa-trash-o"></i>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                  </div>
+                </div> 
+                
+               
+                
+                <style>
+                    .box.box-aqua {
+                        border-top-color: #00c0ef !important;
+                    }
+                    .box.box-green {
+                        border-top-color: #00a65a !important;
+                    }
+                    .box.box-success {
+                        border-top-color: #3c8dbc;
+                    }
+                    .box {
+                        position: relative;
+                        border-radius: 3px;
+                        background: linear-gradient(to right,rgba(2, 151, 243, 0.3) , rgba(1, 240, 108, 0.3));
+                        border-top: 3px solid #d2d6de;
+                        margin-bottom: 20px;
+                        width: 100%;
+                        box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                    }
+                    .box-header {
+                        color: #444;
+                        display: block;
+                        padding: 10px;
+                        position: relative;
+                    }
+                    .box-header>.ion {
+                        margin-right: 5px;
+                    }
+                    .box-header .box-title {
+                        display: inline-block;
+                        font-size: 18px;
+                        margin: 0;
+                        line-height: 1;
+                    }
+                    .box-header>.box-tools {
+                        position: absolute;
+                        right: 10px;
+                        top: 5px;
+                    }
+                    .inline {
+                        display: inline;
+                    }
+                    .box-body {
+                        border-top-left-radius: 0;
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 3px;
+                        border-bottom-left-radius: 3px;
+                        padding: 10px;
+                    }
+                    .todo-list {
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+                        overflow: auto;
+                    }
+                    .todo-list>li {
+                        border-radius: 2px;
+                        padding: 10px;
+                        background: #ffffff;
+                        margin-bottom: 2px;
+                        border-left: 2px solid #e6e7e8;
+                        color: #444;
+                    }
+                    .todo-list>li .label {
+                        margin-left: 10px;
+                        font-size: 9px;
+                    }
+                    .todo-list>li .tools {
+                        display: none;
+                        float: right;
+                        color: #dd4b39;
+                    }
+                    .todo-list>li:hover .tools{
+                        display: block;  
+                    }
+                    .no-border {
+                        border: 0 !important;
+                    }
+                    .box-footer {
+                        border-top-left-radius: 0;
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 3px;
+                        border-bottom-left-radius: 3px;
+                        border-top: 1px solid #f4f4f4;
+                        padding: 10px;
+                        background-color: #fff;
+                    }
+                    .btn-default {
+                        background-color: #f4f4f4;
+                        color: #444;
+                        border-color: #ddd;
+                    }
+                    .btn {
+                        border-radius: 3px;
+                        -webkit-box-shadow: none;
+                        box-shadow: none;
+                        border: 1px solid transparent;
+                    }
+                            
+                                    </style>   
+                                
+            
+        </section>
+        
+    </body>
 </html>
