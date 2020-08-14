@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Core UI</title>
+	<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+<link rel="stylesheet" href="admin.css"/>
+</head>
+<body>
+    <div class="super_container">
+    
+                 <!--Navbar Start-->
+            <nav class="navbar navbar-expand-lg navbar-dark" style ="background-color:#2b299b;">
+                 <a class="navbar-brand" href="/academy">
+                    <img src="caramelacademy.jpeg" width="150" height="54" alt="LOGO" style="border-radius: 40px 0px 0px 40px;">
+                  </a>
+                  <!-- Collapse button -->
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    
+                  <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+                    <!-- Links -->
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item dropdown1">
+                        <a class="nav-link dropdown-toggle active" id="course_list" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rate</a>
+                     <div class="dropdown-content">
+                         <a class="dropdown-item" href="#">Rate Your Course</a>
+                         <a class="dropdown-item" href="#">Rate Your Instructor</a>
+                     </div>
+                     </li>
+                         <li class="nav-item active">
+                            <a class="nav-link" href="/">IT Services Solution</a>
+                          </li>
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle active" id="course_list" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="course_list">
+                            <a class="dropdown-item" href="#">UI Courses</a>
+                            <a class="dropdown-item" href="#">Backend</a>
+                            <a class="dropdown-item" href="#">IT</a>
+                        </div>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/contact/academycontact">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+    </div>
+    
+        <div class="row greet">
+            <div class="col-lg-10" >
+                <h3 style="margin-left:2rem;margin-bottom: 10px;margin-top: 20px;">Greetings Administator !  <i class="fa fa-user-circle" aria-hidden="true"></i></h3>
+            </div>
+            <div class="col-lg-2">
+                <img src="Djano.png"style="height:90%;width:50%;margin-right:2px;margin-bottom:10px;margin-top:10px;">
+            </div>
+            </div>
+            <!--"Arrow Slide"-->
+            <div class="super_container"style="overflow: hidden;">
+            <div class="row container-fluid arrow-list">
+              <div class="col-lg-8">
+              <div class="row container">
+                    <div class="col topic-list">
+                    <!--<p>{{ data.category_name }}-->
+                        <i class="fa fa-arrow-right fa-2x float-right pg_btn"></i>
+                        </p>	
+                       </div>
+                       <div class="col topic-list">
+                           <!--<p>{{ data.subcategory_name }}-->
+                        <i class="fa fa-arrow-right fa-2x float-right pg_btn"></i>
+                        </p>	
+                       </div>
+                    <div class="col topic-list">
+                        <!--<p>{{ data.course_name }}--><i class="fa fa-arrow-down fa-2x float-right pg_btn"></i></p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    <!-- First Half -->
+    <div class="container-fluid main" style="overflow: hidden;">
+        <div class="row container-fluid">
+            <div class="col-md-8">
+            
+                <div class="newDiv">
+                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSktIJ_uNUy7zihr46kxioOV1k-E3BCjvuk2Jdi2uzZ6Q8DzlHPZXV0qHkX4q99fA/embed?start=false&loop=false&delayms=3000" frameborder="0" id="course-img" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    
+                  </div>
+            </div>
+            
+            <div class = "col-md-4">
+                <div class = "lecturelist">
+                
+                <div class="toprow">
+                <div class = "duration">
+                    <!--{{ lectures }}--> <h3>Table of Contents &nbsp;&nbsp;<button class="btn btn-outline-light" style="background-color:white;color:black;"><i class="fas fa-edit"> Edit</i></button></h3> 
+
+                </div>
+                
+                <!--{% for resource in data1 %}-->
+                <div class="lec-title" id="{{ resource.resourse_name }}">
+                    <div class = "title" ><!--{{ resource.resourse_name }}--></div>
+                    <div class= "lec-duration"><!--{{ resource.resourse_length }}--></div>
+                </div>
+                <script>
+                    video = document.getElementById("course-img");
+                    button = document.getElementById("{{ resource.resourse_name }}");
+                    button.addEventListener("click", function (){
+                        // Change this to the video source for the lecture
+                        video.innerHTML = '<iframe src="{{ resource.resourse_link }}" frameborder="0" id="course-img" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'
+                    });
+                </script>
+                <!--{% endfor %}-->
+        
+    </div>   
+    </div>
+     </div>
+    </div>
+    </div>
+    <!--Footer-->
+  
+          
+         <!--<footer>
+              <div class="row gap_u">
+                      <div class="row container-fluid justify-content-center align-items-center ">
+                          <div class="text-center social">
+                              <i class="fab fa-facebook-f fa-2x"></i>
+                              <i class="fab fa-instagram fa-2x gap_l"></i>
+                              <i class="fab fa-pinterest-square fa-2x gap_l"></i>
+                              <i class="fab fa-twitter-square fa-2x gap_l"></i>
+                              <i class="fab fa-linkedin-in fa-2x gap_l"></i>
+                          </div>
+                      </div>
+                      <div class="row container-fluid justify-content-center align-items-center">
+                          <div class="cr text-center"><h4>©2020 All Rights Reserverd By Caramel IT Services Pvt. Ltd.</h4></div>
+                      </div>
+              </div>
+          </footer>-->
+          
+    <!--Lower section-->
+    <div class="container-fluid">
+    <div class="col-lg-12">
+    <div class=super_main>
+    <div class="tabs">
+        <div class="tab-header">
+          <div class="active">
+            <i class="fa fa-book"></i> Lessons
+          </div>
+          <div>
+            <i class="fas fa-pen-square"> </i>  Handouts
+          </div>
+          <div>
+            <i class="fas fa-sticky-note"></i> Tutorials
+          </div>
+          <div class="dropdown1">
+            <i class="far fa-chart-bar"></i> Scenarios
+            <section class="dropdown-content">
+              <a href="#">Technical</a>
+              <a href="#">Functional</a>
+            </section>
+          </div>
+          <div class="dropdown1">
+            <i class="fa fa-code"></i> Assignments
+            <section class="dropdown-content">
+              <a href="#">Projects</a>
+              <a href="#">Mini-Project</a>
+            </section>
+          </div>
+          <div>
+            <i class="fas fa-border-all"></i> Examples
+          </div>
+          <div class="dropdown1">
+            <i class="fas fa-chart-line"></i> Additional Details
+            <section class="dropdown-content">
+              <a href="#">Notes</a>
+              <a href="#">Announcements</a>
+              <a href="#">Q&A</a>
+            </section>
+          </div>
+        </div>
+        <div class="tab-indicator"></div>
+        <div class="row">
+        <div class="col-lg-12">
+        <div class="tab-body">
+          <div class="active">
+            <h2>This is LESSONS section</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error neque saepe commodi blanditiis fugiat nisi aliquam ratione porro quibusdam in, eveniet accusantium cumque. Dolore officia reprehenderit perferendis quod libero omnis.Pure and Transparent code is devoid of redundant components.<br>
+                This Means also mobile devices where the navigation is easy and intuitive in a desktop or laptop.<br>
+                Core UI Layout API Lets you custiomize your project for almost any device - be it mobile webapp or web.<br>
+                Core UI is the fastest way to build a modern dashboard for any platforms , browser or device<br>
+                Core UI- Admin Kit is not just another admin template<br>
+                It goes way beyond hitherto admin templates thanks to transparent code and file structure<br></p>
+          </div>
+          <div class="inactive">
+            <h2>This is HANDOUTS section</h2>
+            <p>Lorem Pure and Transparent code is devoid of redundant components.<br>
+                This Means also mobile devices where the navigation is easy and intuitive in a desktop or laptop.<br>
+                Core UI Layout API Lets you custiomize your project for almost any device - be it mobile webapp or web.<br>
+                Core UI is the fastest way to build a modern dashboard for any platforms , browser or device<br>
+                Core UI- Admin Kit is not just another admin template<br>
+                It goes way beyond hitherto admin templates thanks to transparent code and file structure<br>ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+          </div>
+          <div class="inactive">
+            <h2>This is TUTORIALS section</h2>
+            <p>Pure and Transparent code is devoid of redundant components.<br>
+                This Means also mobile devices where the navigation is easy and intuitive in a desktop or laptop.<br>
+                Core UI Layout API Lets you custiomize your project for almost any device - be it mobile webapp or web.<br>
+                Core UI is the fastest way to build a modern dashboard for any platforms , browser or device<br>
+                Core UI- Admin Kit is not just another admin template<br>
+                It goes way beyond hitherto admin templates thanks to transparent code and file structure<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+          </div>
+          <div class="inactive">
+            <h2>This is SCENARIOS section</h2>
+            <p>Lorem Pure and Transparent code is devoid of redundant components.<br>
+                This Means also mobile devices where the navigation is easy and intuitive in a desktop or laptop.<br>
+                Core UI Layout API Lets you custiomize your project for almost any device - be it mobile webapp or web.<br>
+                Core UI is the fastest way to build a modern dashboard for any platforms , browser or device<br>
+                Core UI- Admin Kit is not just another admin template<br>
+                It goes way beyond hitherto admin templates thanks to transparent code and file structure<br> ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+          </div>
+          <div class="inactive">
+            <h2>This is ASSIGMENTS section</h2>
+            <p>Pure and Transparent code is devoid of redundant components.<br>
+                This Means also mobile devices where the navigation is easy and intuitive in a desktop or laptop.<br>
+                Core UI Layout API Lets you custiomize your project for almost any device - be it mobile webapp or web.<br>
+                Core UI is the fastest way to build a modern dashboard for any platforms , browser or device<br>
+                Core UI- Admin Kit is not just another admin template<br>
+                It goes way beyond hitherto admin templates thanks to transparent code and file structure<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+          </div>
+          <div class="inactive">
+            <h2>This is EXAMPLES section</h2>
+            <p>Lorem ipsum Pure and Transparent code is devoid of redundant components.<br>
+                This Means also mobile devices where the navigation is easy and intuitive in a desktop or laptop.<br>
+                Core UI Layout API Lets you custiomize your project for almost any device - be it mobile webapp or web.<br>
+                Core UI is the fastest way to build a modern dashboard for any platforms , browser or device<br>
+                Core UI- Admin Kit is not just another admin template<br>
+                It goes way beyond hitherto admin templates thanks to transparent code and file structure<br> dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+          </div>
+          <div class="inactive">
+            <h2>This is ADDITIONAL INFORMATION section</h2>
+            <p>Lorem ipsum Pure and Transparent code is devoid of redundant components.<br>
+                This Means also mobile devices where the navigation is easy and intuitive in a desktop or laptop.<br>
+                Core UI Layout API Lets you custiomize your project for almost any device - be it mobile webapp or web.<br>
+                Core UI is the fastest way to build a modern dashboard for any platforms , browser or device<br>
+                Core UI- Admin Kit is not just another admin template<br>
+                It goes way beyond hitherto admin templates thanks to transparent code and file structure<br> dolor sit amet consectetur adipisicing elit. Modi minus exercitationem vero, id autem fugit assumenda a molestiae numquam at, quisquam cumque. Labore eligendi perspiciatis quia incidunt quaerat ut ducimus?</p>
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+      
+<script>
+
+  let tabHeader = document.getElementsByClassName("tab-header")[0];
+  let tabIndicator = document.getElementsByClassName("tab-indicator")[0];
+  let tabBody = document.getElementsByClassName("tab-body")[0];
+  let tabsPane = tabHeader.getElementsByTagName("div");
+
+  for(let i=0;i<tabsPane.length;i++){
+    tabsPane[i].addEventListener("click",function(){
+      tabHeader.getElementsByClassName("active")[0].classList.remove("active");
+      tabsPane[i].classList.add("active");
+      tabBody.getElementsByClassName("active")[0].classList.remove("active");
+      tabBody.getElementsByTagName("div")[i].classList.add("active");
+      tabIndicator.style.left = `calc(calc(100% / 7) * ${i})`;
+    });
+  }
+</script>
+          
+         <footer>
+              <div class="row gap_u">
+                      <div class="row container-fluid justify-content-center align-items-center ">
+                          <div class="text-center social">
+                              <i class="fab fa-facebook-f fa-2x"></i>
+                              <i class="fab fa-instagram fa-2x gap_l"></i>
+                              <i class="fab fa-pinterest-square fa-2x gap_l"></i>
+                              <i class="fab fa-twitter-square fa-2x gap_l"></i>
+                              <i class="fab fa-linkedin-in fa-2x gap_l"></i>
+                          </div>
+                      </div>
+                      <div class="row container-fluid justify-content-center align-items-center">
+                          <div class="cr text-center"><h4>©2020 All Rights Reserverd By Caramel IT Services Pvt. Ltd.</h4></div>
+                      </div>
+              </div>
+          </footer>
+       </body>
+    </html>
